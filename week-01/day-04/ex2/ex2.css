@@ -1,0 +1,33 @@
+div {
+  /*height: 512px;*/
+  width: 348px;
+  padding: 0;
+  border: #6954ff solid 16px;
+  margin: 2px;
+  font-size: 36px;
+  font-family: sans-serif;
+  color: white;
+}
+
+div div {
+  text-align: center;
+  width: 90px;
+  padding: 52px 129px;
+  border: 0;
+  margin: 0;
+}
+
+div:first-child {
+  background-color: #e7696b;
+}
+div:nth-child(2) {
+  background-color: #e5ff26;
+}
+
+div:nth-child(3) {
+  background-color: #a7e9e8;
+}
+
+div:nth-child(4) {
+    background-color: #8774ed;
+}

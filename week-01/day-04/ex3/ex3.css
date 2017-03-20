@@ -1,0 +1,26 @@
+div {
+  /*height: 512px;*/
+  width: 348px;
+  padding: 0;
+  border: #4285f4 solid 16px;
+  margin: 2px 0px 5px 3px;
+  font-size: 36px;
+  font-family: sans-serif;
+  color: white;
+}
+
+div div {
+  text-align: center;
+  width: 90px;
+  padding: 45px 129px;
+  border: 0;
+  margin: 0;
+}
+
+.north div {
+  background-color: #e7696b;
+}
+
+.south div {
+  background-color: #a7e9e8;
+}

@@ -1,0 +1,61 @@
+body {
+  color: rgba(0, 0, 0, .8);
+  margin: 0;
+  font-family: 'Merriweather', serif;
+}
+
+img {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+article {
+  width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 36px;
+  line-height: 0.15;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-left: 20px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: lighter;
+  width: 650px;
+}
+
+a {
+  color: rgba(0, 0, 0, .8);
+  font-weight: bold;
+}
+
+p {
+  line-height: 2;
+  font-size: 18px;
+  margin: 15px 0px 15px 0px;
+}
+
+hr:before {
+  display: inline-block;
+  content: '...';
+  align-self: center;
+  font-size: 18px;
+  letter-spacing: 15px;
+  width: 100px;
+  color: rgba(0, 0, 0, .5);
+  margin-bottom: 7px;
+}
+
+hr {
+  border: 0;
+  text-align: center;
+  padding: 15px 0;
+}

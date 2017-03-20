@@ -1,0 +1,25 @@
+/*
+make 'The Businessman' and 'The Lamplighter' blue colored
+
+add 'The King' and 'The Conceited Man' a 1 pixel wide green border each
+
+make 'The King', 'The Conceited Man' and 'The Lamplighter' bold
+
+add 'The Businessman' a yellow background
+*/
+
+.big {
+  color: blue;
+}
+
+.container div {
+  border: solid 1px green;
+}
+
+.b329, #325 {
+  font-weight: bold;
+}
+
+body > p {
+  background-color: yellow;
+}

@@ -1,0 +1,95 @@
+body {
+  background: #ddd;
+  font-family: Lato, sans-serif;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+h4 {
+  margin: 0;
+}
+
+h1 span, h2 span, h3 span {
+  background: #20d1ac;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: tomato;
+  text-decoration: none;
+  transition: color .5s;
+}
+
+a:hover {
+  color: #1a5e25;
+}
+
+main {
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.profilepic {
+  position: absolute;
+  left: -100px;
+  top: 40px;
+}
+
+ul {
+  background: rgba(255,255,255, .8);
+  padding: 20px 20px 5px;
+}
+
+.work {
+  text-align: right;
+}
+
+.share a {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-indent: 110%;
+  overflow: hidden;
+  background-size: contain;
+  position: relative;
+  transition: top .5s, left .5s, box-shadow .5s;
+  box-shadow: 0 0 0 grey;
+  top: 0px;
+  left: 0px;
+}
+
+.share a:hover {
+  top: -5px;
+  left: -5px;
+  box-shadow: 5px 5px 0 grey;
+}
+
+.facebook {
+  background: url(facebook.svg);
+}
+
+.linkedin {
+  background: url(linkedin.svg);
+}
+
+.twitter {
+  background: url(twitter.svg);
+}
