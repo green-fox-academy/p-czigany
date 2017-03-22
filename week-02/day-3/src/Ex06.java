@@ -4,12 +4,12 @@
 public class Ex06 {
 
   public static void main(String[] args) {
-
+    printer("el", " ", "kellett ", "ten", "nem");
   }
 
-  public static void printer(String[] toPrint) {
-    for (String current : toPrint) {
-      System.out.println(current);
+  public static void printer(String... args) {
+    for (String current : args) {
+      System.out.print(current);
     }
   }
 }
