@@ -7,6 +7,10 @@ import java.util.Scanner;
 public class Ex01Anagram {
 
   public static void main(String[] args) {
+    isAnagram();
+  }
+
+  public static void isAnagram() {
     Scanner scan = new Scanner(System.in);
     System.out.println(
             "Please tell me the two lines of which I will tell you if they contain the same letters:");
@@ -20,7 +24,6 @@ public class Ex01Anagram {
     } else {
       System.out.println("They are not anagrams.");
     }
-
   }
 
   public static ArrayList<Character> stringToLetters(String toConvert) {
