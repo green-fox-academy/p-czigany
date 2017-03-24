@@ -7,23 +7,24 @@ import java.util.Scanner;
 public class Ex01Anagram {
 
   public static void main(String[] args) {
-    isAnagram();
-  }
-
-  public static void isAnagram() {
     Scanner scan = new Scanner(System.in);
     System.out.println(
             "Please tell me the two lines of which I will tell you if they contain the same letters:");
     String forwardsString = scan.nextLine();
     String backwardsString = scan.nextLine();
-    ArrayList<Character> forwardsLetters = stringToLetters(forwardsString);
-    ArrayList<Character> backwardsLetters = stringToLetters(backwardsString);
-    if (forwardsLetters.containsAll(backwardsLetters) && backwardsLetters
-            .containsAll(forwardsLetters)) {
+
+    if (isAnagram(forwardsString, backwardsString)) {
       System.out.println("Anagrams they are!");
     } else {
       System.out.println("They are not anagrams.");
     }
+
+  }
+
+  public static boolean isAnagram(String forwards, String backwards) {
+    ArrayList<Character> forwardsLetters = stringToLetters(forwards);
+    ArrayList<Character> backwardsLetters = stringToLetters(backwards);
+    return (forwardsLetters.containsAll(backwardsLetters) && backwardsLetters.containsAll(forwardsLetters));
   }
 
   public static ArrayList<Character> stringToLetters(String toConvert) {
