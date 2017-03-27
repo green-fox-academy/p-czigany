@@ -25,6 +25,8 @@ public class Ex01Lotto {
 
     } catch (IOException ex) {
       System.out.println("I/O Error occurred.");
+    } catch (Exception ex) {
+
     }
   }
 
