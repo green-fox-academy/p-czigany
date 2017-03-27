@@ -14,13 +14,16 @@ import java.util.List;
 public class Ex02Doubled {
 
   public static void main(String[] args) {
+    doubleRemoveToFile();
+  }
+
+  public static void doubleRemoveToFile() {
 
     List<String> linesFrom = readFromFile(Paths.get("assets/duplicated-chars.txt"));
 
     List<String> linesTo = doubleRemove(linesFrom);
 
     printToFile(Paths.get("assets/single-chars.txt"), linesTo);
-
   }
 
   public static List<String> readFromFile(Path fileLocation) {
