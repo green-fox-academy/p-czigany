@@ -12,6 +12,10 @@ import java.util.List;
 public class Ex01Lotto {
 
   public static void main(String[] args) {
+    topFiveNumbers();
+  }
+
+  public static void topFiveNumbers() {
     try {
       Path filePath = Paths.get("assets/otos.csv");
 
