@@ -12,16 +12,10 @@ public class Ex14EverythingGoesToCenter {
   public static void mainDraw(Graphics graphics) {
     int startOffset = 20;
     int i;
-    for (i = 0; i < 300 / startOffset; i++) {
+    for (i = 0; i <= 300 / startOffset; i++) {
       lineToCenter(i * startOffset, 0, graphics);
-    }
-    for (i = 0; i < 300 / startOffset; i++) {
       lineToCenter(300, i * startOffset, graphics);
-    }
-    for (i = 300 / startOffset; i > 0; i--) {
       lineToCenter(i * startOffset, 300, graphics);
-    }
-    for (i = 300 / startOffset; i > 0; i--) {
       lineToCenter(0, i * startOffset, graphics);
     }
   }
