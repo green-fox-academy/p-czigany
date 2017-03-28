@@ -38,8 +38,6 @@ public class Ex10 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }

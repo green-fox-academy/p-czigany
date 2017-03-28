@@ -44,8 +44,6 @@ public class Ex19 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }

@@ -35,8 +35,6 @@ public class Ex11 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }

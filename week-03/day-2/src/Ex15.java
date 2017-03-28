@@ -10,11 +10,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Ex15 {
 
   public static void mainDraw(Graphics graphics) {
-
     int startOffset = 20;
-
     upperRightCornerWeb(startOffset, new Color(128, 0, 128), graphics);
-
     lowerLeftCornerWeb(startOffset, Color.GREEN, graphics);
   }
 
@@ -26,11 +23,8 @@ public class Ex15 {
   }
 
   public static void lowerLeftCornerWeb(int offset, Color colour, Graphics graph) {
-
     graph.setColor(Color.GREEN);
-    for (int i = 0; i < 300 / offset; i++)
-
-    {
+    for (int i = 0; i < 300 / offset; i++) {
       graph.drawLine(0, (i + 1) * offset, (i + 1) * offset, 300);
     }
   }
@@ -50,8 +44,6 @@ public class Ex15 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }

@@ -16,7 +16,6 @@ public class Ex13 {
   public static void checkerboard(int n, Graphics g) {
     g.setColor(Color.BLACK);
     int a = 300 / n;
-//            (Canvas.WIDTH <= Canvas.HEIGHT) ? Canvas.WIDTH / n : Canvas.HEIGHT / n;
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
         if ((i + j) % 2 == 0) {
@@ -41,8 +40,6 @@ public class Ex13 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }

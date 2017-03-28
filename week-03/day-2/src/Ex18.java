@@ -44,10 +44,6 @@ public class Ex18 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }
-
-// create a 300x300 canvas.

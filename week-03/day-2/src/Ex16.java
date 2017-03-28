@@ -11,7 +11,6 @@ public class Ex16 {
 
   public static void mainDraw(Graphics graphics) {
     int startOffset = 5;
-
     doubleWeb(startOffset, 0, 0, 150, 150, new Color(128, 0, 128), Color.GREEN, graphics);
     doubleWeb(startOffset, 150, 0, 300, 150, new Color(128, 0, 128), Color.GREEN, graphics);
     doubleWeb(startOffset, 150, 150, 300, 300, new Color(128, 0, 128), Color.GREEN, graphics);
@@ -55,8 +54,6 @@ public class Ex16 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }

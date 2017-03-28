@@ -22,7 +22,6 @@ public class Ex17 {
       graphics.drawLine(0 + 1 * (i + startOffset), 150 + 0 * (i + startOffset),
               150 + 0 * (i + startOffset), 150 - 1 * (i + startOffset));
     }
-
   }
 
   public static void main(String[] args) {
@@ -40,8 +39,6 @@ public class Ex17 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }

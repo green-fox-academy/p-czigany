@@ -10,10 +10,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Ex06 {
 
   public static void mainDraw(Graphics graphics) {
-    // draw a green 10x10 square to the canvas' center.
     graphics.setColor(Color.GREEN);
     graphics.fillRect(145, 145, 10, 10);
-
   }
 
   public static void main(String[] args) {
@@ -31,8 +29,6 @@ public class Ex06 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }

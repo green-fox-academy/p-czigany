@@ -12,13 +12,10 @@ public class Ex02 {
   public static void mainDraw(Graphics graphics) {
     graphics.setColor(Color.RED);
     graphics.drawLine(50, 50, 250, 50);
-
     graphics.setColor(Color.GREEN);
     graphics.drawLine(250, 50, 250, 250);
-
     graphics.setColor(Color.BLUE);
     graphics.drawLine(250, 250, 50, 250);
-
     graphics.setColor(Color.YELLOW);
     graphics.drawLine(50, 250, 50, 50);
   }

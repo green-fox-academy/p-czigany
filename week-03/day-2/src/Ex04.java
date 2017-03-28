@@ -34,7 +34,6 @@ public class Ex04 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
 }

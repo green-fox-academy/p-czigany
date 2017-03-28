@@ -14,7 +14,6 @@ public class Ex07 {
   }
 
   public static void randomRectangles(int n, Graphics g) {
-
     for (int i = 0; i < n; i++) {
       g.setColor(new Color((int) (Math.random() * 256), (int) (Math.random() * 256),
               (int) (Math.random() * 256), (int) (Math.random() * 256)));
@@ -38,7 +37,6 @@ public class Ex07 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
 }

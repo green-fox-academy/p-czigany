@@ -10,7 +10,6 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Ex05 {
 
   public static void mainDraw(Graphics graphics) {
-
     horizontalLine(10, 20, graphics);
     horizontalLine(0, 40, graphics);
     horizontalLine(20, 30, graphics);
@@ -35,8 +34,6 @@ public class Ex05 {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
-
 }
