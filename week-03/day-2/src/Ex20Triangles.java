@@ -13,8 +13,8 @@ public class Ex20Triangles {
     double size = 30;
     int x1 = 0;
     int y1 = 300;
-    for (x1 = 0; x1 <= 300 - size; x1 += size) {
-      smallTriangle(size, x1, y1, graphics);
+    for (int j = 0; j <= 300 - size; j += size) {
+      smallTriangle(size, x1 + j, y1, graphics);
     }
   }
 
