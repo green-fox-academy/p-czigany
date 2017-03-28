@@ -10,7 +10,12 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Ex20Triangles {
 
   public static void mainDraw(Graphics graphics) {
-    smallTriangle(30, 0, 300, graphics);
+    double size = 30;
+    int x1 = 0;
+    int y1 = 300;
+    for (x1 = 0; x1 <= 300 - size; x1 += size) {
+      smallTriangle(size, x1, y1, graphics);
+    }
   }
 
   public static void smallTriangle(double size, int xOffset, int yOffset, Graphics g) {
