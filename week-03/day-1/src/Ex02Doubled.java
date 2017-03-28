@@ -18,11 +18,8 @@ public class Ex02Doubled {
   }
 
   public static void doubleRemoveToFile() {
-
     List<String> linesFrom = readFromFile(Paths.get("assets/duplicated-chars.txt"));
-
     List<String> linesTo = doubleRemove(linesFrom);
-
     printToFile(Paths.get("assets/single-chars.txt"), linesTo);
   }
 

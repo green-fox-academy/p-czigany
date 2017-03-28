@@ -18,11 +18,8 @@ public class Ex05EncodedLines {
   }
 
   public static void decodeToFile() {
-
     List<String> linesFrom = readFromFile(Paths.get("assets/encoded-lines.txt"));
-
     List<String> linesTo = decode(linesFrom);
-
     printToFile(Paths.get("assets/decoded-lines.txt"), linesTo);
   }
 
@@ -59,4 +56,3 @@ public class Ex05EncodedLines {
     }
   }
 }
-

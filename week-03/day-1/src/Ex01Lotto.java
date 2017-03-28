@@ -18,19 +18,15 @@ public class Ex01Lotto {
   public static void topFiveNumbers() {
     try {
       Path filePath = Paths.get("assets/otos.csv");
-
       List<String> lines = Files.readAllLines(filePath);
-
       printTopFive
               (bubbleSort
                       (toSequenceList
                               (numbersFromLines
                                       (lines))));
-
     } catch (IOException ex) {
       System.out.println("I/O Error occurred.");
     } catch (Exception ex) {
-
     }
   }
 

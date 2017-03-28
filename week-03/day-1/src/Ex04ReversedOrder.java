@@ -18,11 +18,8 @@ public class Ex04ReversedOrder {
   }
 
   public static void reverseLinesToFile() {
-
     List<String> linesFrom = readFromFile(Paths.get("assets/reversed-order.txt"));
-
     List<String> linesTo = reverseLineOrder(linesFrom);
-
     printToFile(Paths.get("assets/right-order.txt"), linesTo);
   }
 

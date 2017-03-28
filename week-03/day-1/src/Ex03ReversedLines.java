@@ -16,13 +16,9 @@ public class Ex03ReversedLines {
   public static void main(String[] args) {
     reverseLinesToFile();
   }
-
   public static void reverseLinesToFile() {
-
     List<String> linesFrom = readFromFile(Paths.get("assets/reversed-lines.txt"));
-
     List<String> linesTo = reverseLines(linesFrom);
-
     printToFile(Paths.get("assets/forwards-lines.txt"), linesTo);
   }
 
