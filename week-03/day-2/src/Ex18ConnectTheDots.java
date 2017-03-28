@@ -7,22 +7,26 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex13 {
+public class Ex18ConnectTheDots {
 
   public static void mainDraw(Graphics graphics) {
-    checkerboard(50, graphics);
+    int[][] boxPoints = {{10, 10}, {290,  10}, {290, 290}, {10, 290}};
+    int[][] polyPoints = {{50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70}, {120, 100}, {85, 130}, {50, 100}};
+    polygon(boxPoints, graphics);
+    polygon(polyPoints, graphics);
   }
 
-  public static void checkerboard(int n, Graphics g) {
-    g.setColor(Color.BLACK);
-    int a = 300 / n;
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
-        if ((i + j) % 2 == 0) {
-          g.fillRect(i * a, j * a, a, a);
-        }
+  public static void polygon(int[][] points, Graphics g) {
+    g.setColor(Color.GREEN);
+    int[] xCoords = new int[points.length];
+    int[] yCoords = new int[points.length];
+    for (int i = 0; i < points.length; i++) {
+      for (int j = 0; j < points[i].length; j++) {
+        xCoords[i] = points[i][0];
+        yCoords[i] = points[i][1];
       }
     }
+    g.drawPolygon(xCoords, yCoords, points.length);
   }
 
   public static void main(String[] args) {

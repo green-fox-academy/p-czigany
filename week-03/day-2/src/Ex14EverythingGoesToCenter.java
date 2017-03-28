@@ -7,17 +7,27 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex02 {
+public class Ex14EverythingGoesToCenter {
 
   public static void mainDraw(Graphics graphics) {
-    graphics.setColor(Color.RED);
-    graphics.drawLine(50, 50, 250, 50);
-    graphics.setColor(Color.GREEN);
-    graphics.drawLine(250, 50, 250, 250);
-    graphics.setColor(Color.BLUE);
-    graphics.drawLine(250, 250, 50, 250);
-    graphics.setColor(Color.YELLOW);
-    graphics.drawLine(50, 250, 50, 50);
+    int startOffset = 20;
+    int i;
+    for (i = 0; i < 300 / startOffset; i++) {
+      lineToCenter(i * startOffset, 0, graphics);
+    }
+    for (i = 0; i < 300 / startOffset; i++) {
+      lineToCenter(300, i * startOffset, graphics);
+    }
+    for (i = 300 / startOffset; i > 0; i--) {
+      lineToCenter(i * startOffset, 300, graphics);
+    }
+    for (i = 300 / startOffset; i > 0; i--) {
+      lineToCenter(0, i * startOffset, graphics);
+    }
+  }
+
+  public static void lineToCenter(int x, int y, Graphics g) {
+    g.drawLine(x, y, 150, 150);
   }
 
   public static void main(String[] args) {

@@ -7,11 +7,26 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex06 {
+public class Ex15LinePlay {
 
   public static void mainDraw(Graphics graphics) {
-    graphics.setColor(Color.GREEN);
-    graphics.fillRect(145, 145, 10, 10);
+    int startOffset = 20;
+    upperRightCornerWeb(startOffset, new Color(128, 0, 128), graphics);
+    lowerLeftCornerWeb(startOffset, Color.GREEN, graphics);
+  }
+
+  public static void upperRightCornerWeb(int offset, Color colour, Graphics graph) {
+    graph.setColor(colour);
+    for (int i = 0; i < 300 / offset; i++) {
+      graph.drawLine((i + 1) * offset, 0, 300, (i + 1) * offset);
+    }
+  }
+
+  public static void lowerLeftCornerWeb(int offset, Color colour, Graphics graph) {
+    graph.setColor(Color.GREEN);
+    for (int i = 0; i < 300 / offset; i++) {
+      graph.drawLine(0, (i + 1) * offset, (i + 1) * offset, 300);
+    }
   }
 
   public static void main(String[] args) {

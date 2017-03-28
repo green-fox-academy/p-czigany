@@ -7,17 +7,12 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex11 {
+public class Ex03Diagonals {
 
   public static void mainDraw(Graphics graphics) {
-    purpleSteps(19, graphics);
-  }
-
-  public static void purpleSteps(int n, Graphics g) {
-    g.setColor(new Color(128, 0, 128));
-    for (int i = 0; i < n; i++) {
-      g.fillRect(10 + i * 10, 10 + i * 10, 10, 10);
-    }
+    graphics.setColor(Color.GREEN);
+    graphics.drawLine(0, 0, 300, 300);
+    graphics.drawLine(300, 0, 0, 300);
   }
 
   public static void main(String[] args) {

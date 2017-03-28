@@ -7,19 +7,19 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex09 {
+public class Ex08SquarePositioning {
 
   public static void mainDraw(Graphics graphics) {
-    centerBox(10, graphics);
-    centerBox(130, graphics);
-    centerBox(190, graphics);
+    randomlyPlacedSquares(100, 50, graphics);
+    randomlyPlacedSquares(130, 100, graphics);
+    randomlyPlacedSquares(190, 10, graphics);
   }
 
-  public static void centerBox(int a, Graphics g) {
+  public static void randomlyPlacedSquares(int x, int y, Graphics g) {
     g.setColor(new Color((int) (Math.random() * 256), (int) (Math.random() * 256),
             (int) (Math.random() * 256), (int) (Math.random() * 256)));
-    g.fillRect(150 - (a / 2), 150 - (a / 2),
-            a, a);
+    g.fillRect((int) (Math.random() * 250), (int) (Math.random() * 250),
+            50, 50);
   }
 
   public static void main(String[] args) {

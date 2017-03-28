@@ -7,25 +7,20 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex19 {
+public class Ex12PurpleSteps3d {
 
   public static void mainDraw(Graphics graphics) {
-    night(graphics);
-    stars(100, 3, graphics);
+    increasingPurpleSteps(6, graphics);
   }
 
-  public static void night(Graphics g) {
-    g.setColor(Color.BLACK);
-    g.fillRect(0, 0, 300, 300);
-  }
-
-  public static void stars(int n, int size, Graphics g) {
-
+  public static void increasingPurpleSteps(int n, Graphics g) {
+    g.setColor(new Color(128, 0, 128));
+    int j = 10;
+    int offset;
     for (int i = 0; i < n; i++) {
-      int shade = (int) (Math.random() * 256);
-      g.setColor(new Color(shade, shade, shade));
-      g.fillRect((int) (Math.random() * 296), (int) (Math.random() * 296),
-              size, size);
+      offset = 10 + i * 10;
+      g.fillRect(j, j, 10 + i * 10, 10 + i * 10);
+      j += offset;
     }
   }
 

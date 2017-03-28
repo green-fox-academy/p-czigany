@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex17 {
+public class Ex17EnvelopeStar {
 
   public static void mainDraw(Graphics graphics) {
     int startOffset = 15;

@@ -7,21 +7,19 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex12 {
+public class Ex09CenteredBoxes {
 
   public static void mainDraw(Graphics graphics) {
-    increasingPurpleSteps(6, graphics);
+    centerBox(10, graphics);
+    centerBox(130, graphics);
+    centerBox(190, graphics);
   }
 
-  public static void increasingPurpleSteps(int n, Graphics g) {
-    g.setColor(new Color(128, 0, 128));
-    int j = 10;
-    int offset;
-    for (int i = 0; i < n; i++) {
-      offset = 10 + i * 10;
-      g.fillRect(j, j, 10 + i * 10, 10 + i * 10);
-      j += offset;
-    }
+  public static void centerBox(int a, Graphics g) {
+    g.setColor(new Color((int) (Math.random() * 256), (int) (Math.random() * 256),
+            (int) (Math.random() * 256), (int) (Math.random() * 256)));
+    g.fillRect(150 - (a / 2), 150 - (a / 2),
+            a, a);
   }
 
   public static void main(String[] args) {

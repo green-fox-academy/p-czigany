@@ -7,16 +7,16 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex05 {
+public class Ex04ToTheCenter {
 
   public static void mainDraw(Graphics graphics) {
-    horizontalLine(10, 20, graphics);
-    horizontalLine(0, 40, graphics);
-    horizontalLine(20, 30, graphics);
+    lineToCenter(10, 20, graphics);
+    lineToCenter(0, 20, graphics);
+    lineToCenter(20, 20, graphics);
   }
 
-  public static void horizontalLine(int x, int y, Graphics g) {
-    g.drawLine(x, y, x + 50, y);
+  public static void lineToCenter(int x, int y, Graphics g) {
+    g.drawLine(x, y, 150, 150);
   }
 
   public static void main(String[] args) {

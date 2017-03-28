@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex16 {
+public class Ex16LinePlayQuarters {
 
   public static void mainDraw(Graphics graphics) {
     int startOffset = 5;

@@ -7,27 +7,16 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex14 {
+public class Ex05Horizontal {
 
   public static void mainDraw(Graphics graphics) {
-    int startOffset = 20;
-    int i;
-    for (i = 0; i < 300 / startOffset; i++) {
-      lineToCenter(i * startOffset, 0, graphics);
-    }
-    for (i = 0; i < 300 / startOffset; i++) {
-      lineToCenter(300, i * startOffset, graphics);
-    }
-    for (i = 300 / startOffset; i > 0; i--) {
-      lineToCenter(i * startOffset, 300, graphics);
-    }
-    for (i = 300 / startOffset; i > 0; i--) {
-      lineToCenter(0, i * startOffset, graphics);
-    }
+    horizontalLine(10, 20, graphics);
+    horizontalLine(0, 40, graphics);
+    horizontalLine(20, 30, graphics);
   }
 
-  public static void lineToCenter(int x, int y, Graphics g) {
-    g.drawLine(x, y, 150, 150);
+  public static void horizontalLine(int x, int y, Graphics g) {
+    g.drawLine(x, y, x + 50, y);
   }
 
   public static void main(String[] args) {

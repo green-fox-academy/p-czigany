@@ -7,13 +7,19 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex01 {
+public class Ex07FillWithRectangles {
 
   public static void mainDraw(Graphics graphics) {
-    graphics.setColor(Color.RED);
-    graphics.drawLine(0, 150, 300, 150);
-    graphics.setColor(Color.GREEN);
-    graphics.drawLine(150, 0, 150, 300);
+    randomRectangles(4, graphics);
+  }
+
+  public static void randomRectangles(int n, Graphics g) {
+    for (int i = 0; i < n; i++) {
+      g.setColor(new Color((int) (Math.random() * 256), (int) (Math.random() * 256),
+              (int) (Math.random() * 256), (int) (Math.random() * 256)));
+      g.fillRect((int) (Math.random() * 250), (int) (Math.random() * 250),
+              1 + (int) (Math.random() * 100), 1 + (int) (Math.random() * 100));
+    }
   }
 
   public static void main(String[] args) {

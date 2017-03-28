@@ -7,20 +7,17 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex10 {
+public class Ex11PurpleSteps {
 
   public static void mainDraw(Graphics graphics) {
-    for (int i = 0; i < 100; i++) {
-      colouredCenterBox(3 * (100 - i),
-              new Color((int) (Math.random() * 256), (int) (Math.random() * 256),
-                      (int) (Math.random() * 256)), graphics);
-    }
+    purpleSteps(19, graphics);
   }
 
-  public static void colouredCenterBox(int a, Color colour, Graphics g) {
-    g.setColor(colour);
-    g.fillRect(150 - (a / 2), 150 - (a / 2),
-            a, a);
+  public static void purpleSteps(int n, Graphics g) {
+    g.setColor(new Color(128, 0, 128));
+    for (int i = 0; i < n; i++) {
+      g.fillRect(10 + i * 10, 10 + i * 10, 10, 10);
+    }
   }
 
   public static void main(String[] args) {

@@ -7,26 +7,20 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex15 {
+public class Ex10RainbowBoxes {
 
   public static void mainDraw(Graphics graphics) {
-    int startOffset = 20;
-    upperRightCornerWeb(startOffset, new Color(128, 0, 128), graphics);
-    lowerLeftCornerWeb(startOffset, Color.GREEN, graphics);
-  }
-
-  public static void upperRightCornerWeb(int offset, Color colour, Graphics graph) {
-    graph.setColor(colour);
-    for (int i = 0; i < 300 / offset; i++) {
-      graph.drawLine((i + 1) * offset, 0, 300, (i + 1) * offset);
+    for (int i = 0; i < 100; i++) {
+      colouredCenterBox(3 * (100 - i),
+              new Color((int) (Math.random() * 256), (int) (Math.random() * 256),
+                      (int) (Math.random() * 256)), graphics);
     }
   }
 
-  public static void lowerLeftCornerWeb(int offset, Color colour, Graphics graph) {
-    graph.setColor(Color.GREEN);
-    for (int i = 0; i < 300 / offset; i++) {
-      graph.drawLine(0, (i + 1) * offset, (i + 1) * offset, 300);
-    }
+  public static void colouredCenterBox(int a, Color colour, Graphics g) {
+    g.setColor(colour);
+    g.fillRect(150 - (a / 2), 150 - (a / 2),
+            a, a);
   }
 
   public static void main(String[] args) {

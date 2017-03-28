@@ -7,16 +7,22 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex04 {
+public class Ex13Checkerboard {
 
   public static void mainDraw(Graphics graphics) {
-    lineToCenter(10, 20, graphics);
-    lineToCenter(0, 20, graphics);
-    lineToCenter(20, 20, graphics);
+    checkerboard(50, graphics);
   }
 
-  public static void lineToCenter(int x, int y, Graphics g) {
-    g.drawLine(x, y, 150, 150);
+  public static void checkerboard(int n, Graphics g) {
+    g.setColor(Color.BLACK);
+    int a = 300 / n;
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
+        if ((i + j) % 2 == 0) {
+          g.fillRect(i * a, j * a, a, a);
+        }
+      }
+    }
   }
 
   public static void main(String[] args) {

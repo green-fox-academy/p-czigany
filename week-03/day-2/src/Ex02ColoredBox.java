@@ -7,12 +7,17 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  * Created by peter on 2017.03.28..
  */
-public class Ex03 {
+public class Ex02ColoredBox {
 
   public static void mainDraw(Graphics graphics) {
+    graphics.setColor(Color.RED);
+    graphics.drawLine(50, 50, 250, 50);
     graphics.setColor(Color.GREEN);
-    graphics.drawLine(0, 0, 300, 300);
-    graphics.drawLine(300, 0, 0, 300);
+    graphics.drawLine(250, 50, 250, 250);
+    graphics.setColor(Color.BLUE);
+    graphics.drawLine(250, 250, 50, 250);
+    graphics.setColor(Color.YELLOW);
+    graphics.drawLine(50, 250, 50, 50);
   }
 
   public static void main(String[] args) {
