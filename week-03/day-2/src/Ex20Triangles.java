@@ -11,10 +11,16 @@ public class Ex20Triangles {
 
   public static void mainDraw(Graphics graphics) {
     double size = 30;
-    int x1 = 0;
-    int y1 = 300;
-    for (int j = 0; j <= 300 - size; j += size) {
-      smallTriangle(size, x1 + j, y1, graphics);
+    int x1 = 30;
+    int y1 = 250;
+    int width = 240;
+    while (width >= size) {
+      for (int j = 0; j <= width - size; j += size) {
+        smallTriangle(size, x1 + j, y1, graphics);
+      }
+      width -= size;
+      x1 += size / 2;
+      y1 -= size * 0.866025;
     }
   }
 
