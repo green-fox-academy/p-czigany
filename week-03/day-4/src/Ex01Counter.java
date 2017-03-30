@@ -11,9 +11,9 @@ public class Ex01Counter {
     if (highest < 0) {
       return 0;
     } else {
-      System.out.println();
-      return
+      System.out.println(highest);
+      highest--;
+      return countdown(highest);
     }
   }
-
 }
