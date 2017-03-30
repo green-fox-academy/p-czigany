@@ -13,21 +13,21 @@ public class Ex11CagesFractal {
     drawFourLinesFractal(0, 0, 300, 300, graphics);
   }
 
-  public static void drawFourLinesFractal(int topLeftX, int topLeftY, int bottomRightX, int bottomRightY,
+  public static void drawFourLinesFractal(double topLeftX, double topLeftY, double bottomRightX, double bottomRightY,
           Graphics graph) {
-    int width = bottomRightX - topLeftX;
-    int height = bottomRightY - topLeftY;
-    if (width < 10) {
+    double width = bottomRightX - topLeftX;
+    double height = bottomRightY - topLeftY;
+    if (width < 10 {
       return;
     } else {
-      graph.drawLine(topLeftX + width * 1 / 3, topLeftY, topLeftX + width * 1 / 3, bottomRightY);
-      graph.drawLine(topLeftX + width * 2 / 3, topLeftY, topLeftX + width * 2 / 3, bottomRightY);
-      graph.drawLine(topLeftX, topLeftY + height * 1 / 3, bottomRightX, topLeftY + height / 3);
-      graph.drawLine(topLeftX, topLeftY + height * 2 / 3, bottomRightX, topLeftY + height * 2 / 3);
-      drawFourLinesFractal(topLeftX + width * 1 / 3, topLeftY, topLeftX + width * 2 / 3, topLeftY + height * 1 / 3, graph);
-      drawFourLinesFractal(topLeftX + width * 2 / 3, topLeftY + height * 1 / 3, bottomRightX, topLeftY + height * 2 / 3, graph );
-      drawFourLinesFractal(topLeftX + width * 1 / 3, topLeftY + height * 2 / 3, topLeftX + width * 2 / 3, bottomRightY, graph);
-      drawFourLinesFractal(topLeftX, topLeftY + height * 1 / 3, topLeftX + width * 1 / 3, topLeftY + height * 2 / 3, graph);
+      graph.drawLine((int) (topLeftX + width * 1d / 3d), (int) topLeftY, (int) (topLeftX + width * 1d / 3d), (int) bottomRightY);
+      graph.drawLine((int) (topLeftX + width * 2d / 3d), (int) topLeftY, (int) (topLeftX + width * 2d / 3d), (int) bottomRightY);
+      graph.drawLine((int) topLeftX, (int) (topLeftY + height * 1d / 3d), (int) bottomRightX, (int) (topLeftY + height * 1d / 3d));
+      graph.drawLine((int) topLeftX, (int) (topLeftY + height * 2d / 3d), (int) bottomRightX, (int) (topLeftY + height * 2d / 3d));
+      drawFourLinesFractal(topLeftX + width * 1d / 3d, topLeftY, topLeftX + width * 2 / 3, topLeftY + height * 1d / 3d, graph);
+      drawFourLinesFractal(topLeftX + width * 2d / 3d, topLeftY + height * 1d / 3d, bottomRightX, topLeftY + height * 2d / 3d, graph );
+      drawFourLinesFractal(topLeftX + width * 1d / 3d, topLeftY + height * 2d / 3d, topLeftX + width * 2d / 3d, bottomRightY, graph);
+      drawFourLinesFractal(topLeftX, topLeftY + height * 1d / 3d, topLeftX + width * 1d / 3d, topLeftY + height * 2d / 3d, graph);
     }
   }
 
