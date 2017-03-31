@@ -21,7 +21,7 @@ public class Hexagon {
     } else {
       hexagon(centerX, centerY, edge, graphics);
       int shorter = (int) ((double) edge * 2 / 3 * Math.sin(Math.toRadians(30)));
-      int longer = (int) ((double) edge * 2 / 3  * Math.sin(Math.toRadians(30)));
+      int longer = (int) ((double) edge * 2 / 3  * Math.cos(Math.toRadians(30)));
       int twoThirds = (int) ((double) edge * 2 / 3);
       int x1 = centerX + shorter;
       int x2 = centerX + twoThirds;
@@ -49,14 +49,13 @@ public class Hexagon {
     int r = (int) (Math.random() * 256);
     int g = (int) (Math.random() * 256);
     int b = (int) (Math.random() * 256);
-    int shorter = (int) ((double) edge * 2 / 3 * Math.sin(Math.toRadians(30)));
-    int longer = (int) ((double) edge * 2 / 3  * Math.sin(Math.toRadians(30)));
-    int twoThirds = (int) ((double) edge * 2 / 3);
+    int shorter = (int) ((double) edge * Math.sin(Math.toRadians(30)));
+    int longer = (int) ((double) edge * Math.cos(Math.toRadians(30)));
     int x1 = centerX + shorter;
-    int x2 = centerX + twoThirds;
+    int x2 = centerX + edge;
     int x3 = centerX + shorter;
     int x4 = centerX - shorter;
-    int x5 = centerX - twoThirds;
+    int x5 = centerX - edge;
     int x6 = centerX - shorter;
     int y1 = centerY - longer;
     int y2 = centerY;
