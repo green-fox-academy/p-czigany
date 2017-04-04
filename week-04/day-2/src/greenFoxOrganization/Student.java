@@ -23,17 +23,13 @@ public class Student extends Person {
   }
 
   Student(String name, int age, String gender, String previousOrganization) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+    super(name, age, gender);
     this.previousOrganization = previousOrganization;
     this.skippedDays = 0;
   }
 
   Student() {
-    this.name = "Jane Doe";
-    this.age = 30;
-    this.gender = "female";
+    super("Jane Doe", 30, "female");
     this.previousOrganization = "The School of Life";
     this.skippedDays = 0;
   }
