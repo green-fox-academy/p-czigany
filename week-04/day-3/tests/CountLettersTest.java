@@ -20,4 +20,17 @@ class CountLettersTest {
     compareTo.put('n', 1);
     assertEquals(compareTo, myCounter.countLetters("saarkaany"));
   }
+
+  @Test
+  void testCaseFalse() {
+    CountLetters myCounter = new CountLetters();
+    HashMap<Character, Integer> compareTo = new HashMap<>();
+    compareTo.put('a', 4);
+    compareTo.put('y', 1);
+    compareTo.put('k', 1);
+    compareTo.put('r', 1);
+    compareTo.put('s', 1);
+    compareTo.put('n', 1);
+    assertFalse(compareTo.equals(myCounter.countLetters("saaarkaaany")));
+  }
 }
