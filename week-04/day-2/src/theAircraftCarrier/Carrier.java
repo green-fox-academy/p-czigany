@@ -27,24 +27,11 @@ public class Carrier {
 
   void fill() {
     if (getAmmoStored() != 0) {
-      int totalAmmoNeeded = 0;
-      for (Aircraft toFill :
-              carriedPlanes) {
-        totalAmmoNeeded += toFill.getMaxAmmo() - toFill.getCurrentAmmo();
-      }
-      if (getAmmoStored() >= totalAmmoNeeded) {
+      if (ammoIsEnough()) {
         reloadPlanes(carriedPlanes);
       } else {
-        List<Aircraft> f35sOnBoard = new ArrayList<>();
-        List<Aircraft> f16sOnBoard = new ArrayList<>();
-        for (Aircraft toPick :
-                carriedPlanes) {
-          if (toPick instanceof F35) {
-            f35sOnBoard.add(toPick);
-          } else {
-            f16sOnBoard.add(toPick);
-          }
-        }
+        List<Aircraft> f35sOnBoard = pickPlanes(F35.class);
+        List<Aircraft> f16sOnBoard = pickPlanes(F16.class);
         reloadPlanes(f35sOnBoard);
         reloadPlanes(f16sOnBoard);
       }
@@ -52,6 +39,26 @@ public class Carrier {
       System.out.println(
               "I wanna be an OutOfAmmoException: Reloading cannot start -- the Ammo Storage is already empty.");
     }
+  }
+
+  boolean ammoIsEnough() {
+    int totalAmmoNeeded = 0;
+    for (Aircraft toFill :
+            carriedPlanes) {
+      totalAmmoNeeded += toFill.getMaxAmmo() - toFill.getCurrentAmmo();
+    }
+    return (getAmmoStored() >= totalAmmoNeeded);
+  }
+
+  List<Aircraft> pickPlanes(Class classToPick) {
+    List<Aircraft> pickedPlanes = new ArrayList<>();
+    for (Aircraft examined :
+            carriedPlanes) {
+      if (classToPick.isInstance(examined)) {
+        pickedPlanes.add(examined);
+      }
+    }
+    return pickedPlanes;
   }
 
   void reloadPlanes(List<Aircraft> planesToReload) {
@@ -92,6 +99,10 @@ public class Carrier {
       }
       return status;
     }
+  }
+
+  public List<Aircraft> getCarriedPlanes() {
+    return carriedPlanes;
   }
 
   public int getAmmoStored() {
