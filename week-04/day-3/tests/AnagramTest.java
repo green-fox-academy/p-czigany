@@ -18,4 +18,10 @@ class AnagramTest {
     Anagram annah = new Anagram();
     assertFalse(annah.areAnagrams("kacsa", "zacsko"));
   }
+
+  @Test
+  void anagramTestCaseCaps() {
+    Anagram annah = new Anagram();
+    assertFalse(annah.areAnagrams("kacsa", "Kacsa"));
+  }
 }
