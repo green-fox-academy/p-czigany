@@ -15,7 +15,6 @@ public class Anagram {
   }
 
   ArrayList<Character> stringToLetters(String toConvert) {
-    toConvert = toConvert.replaceAll("[^a-zA-Z]", "").toLowerCase();
     ArrayList<Character> converted = new ArrayList<>();
     for (int i = 0; i < toConvert.length(); i++) {
       converted.add(toConvert.charAt(i));
