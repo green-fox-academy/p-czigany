@@ -12,4 +12,10 @@ class AnagramTest {
     Anagram annah = new Anagram();
     assertTrue(annah.areAnagrams("kacsa", "sacka"));
   }
+
+  @Test
+  void anagramTestCaseFalse() {
+    Anagram annah = new Anagram();
+    assertFalse(annah.areAnagrams("kacsa", "zacsko"));
+  }
 }
