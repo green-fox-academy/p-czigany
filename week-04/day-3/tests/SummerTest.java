@@ -47,6 +47,6 @@ public class SummerTest {
   @Test
   void testCaseNull() {
     Summer myShortestSummer = new Summer();
-    assertEquals(null, myShortestSummer.sum(null));
+    assertEquals(0, myShortestSummer.sum(null));
   }
 }
