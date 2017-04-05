@@ -8,27 +8,27 @@ public class Aircraft {
   private int maxAmmo, currentAmmo, baseDamage;
 
   Aircraft(int maxAmmo, int baseDamage) {
-    this.maxAmmo = baseDamage;
+    this.maxAmmo = maxAmmo;
     this.baseDamage = baseDamage;
     this.currentAmmo = 0;
   }
 
   int fight() {
-    int burst = getCurrentAmmo();
-    setCurrentAmmo(0);
-    return burst * getBaseDamage();
+    int burst = currentAmmo;
+    this.currentAmmo = 0;
+    return burst * baseDamage;
   }
 
   int refill(int toLoad) {
-    while (toLoad != 0 && getCurrentAmmo() != getMaxAmmo()) {
-      setCurrentAmmo(getCurrentAmmo() + 1);
+    while (toLoad != 0 && currentAmmo != maxAmmo) {
+      this.currentAmmo++;
       toLoad--;
     }
     return toLoad;
   }
 
   int totalDamage() {
-    return getCurrentAmmo() * getBaseDamage();
+    return currentAmmo * baseDamage;
   }
 
   String getType() {
