@@ -10,6 +10,6 @@ public class AppleTest {
   @Test
   void someTest() {
     Apple myObject = new Apple();
-    assertEquals("apple", myObject.getApple());
+    assertEquals("pear", myObject.getApple());
   }
 }
