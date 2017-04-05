@@ -7,10 +7,16 @@ public class Summer {
 
   int sum(ArrayList<Integer> toSum) {
     int sum = 0;
-    for (Integer current :
-            toSum) {
-      sum += current;
+    if (toSum != null) {
+      for (Integer current :
+              toSum) {
+        sum += current;
+      }
     }
     return sum;
   }
+
+//  int sum() {
+//    return 0;
+//  }
 }
