@@ -17,4 +17,36 @@ public class SummerTest {
     }
     assertEquals(6, myShortestSummer.sum(myListOfNumbers));
   }
+
+  @Test
+  void testCaseEmptyList() {
+    Summer myShortestSummer = new Summer();
+    ArrayList<Integer> myListOfNumbers = new ArrayList<>();
+    assertEquals(0, myShortestSummer.sum(myListOfNumbers));
+  }
+
+  @Test
+  void testCaseOneElement() {
+    Summer myShortestSummer = new Summer();
+    ArrayList<Integer> myListOfNumbers = new ArrayList<>();
+    myListOfNumbers.add(3);
+    assertEquals(3, myShortestSummer.sum(myListOfNumbers));
+  }
+
+  @Test
+  void testCaseMultipleElements() {
+    Summer myShortestSummer = new Summer();
+    ArrayList<Integer> myListOfNumbers = new ArrayList<>();
+    myListOfNumbers.add(5);
+    myListOfNumbers.add(10);
+    myListOfNumbers.add(5);
+    myListOfNumbers.add(7);
+    assertEquals(27, myShortestSummer.sum(myListOfNumbers));
+  }
+
+  @Test
+  void testCaseNull() {
+    Summer myShortestSummer = new Summer();
+    assertEquals(null, myShortestSummer.sum(null));
+  }
 }
