@@ -7,6 +7,8 @@ import java.awt.event.KeyListener;
  * Created by peter on 2017.04.10..
  */
 public class Board extends JComponent implements KeyListener {
+  static final int TILEWIDTH = 72;
+  static final int TILEHEIGHT = 72;
 
   int testBoxX;
   int testBoxY;
@@ -16,7 +18,7 @@ public class Board extends JComponent implements KeyListener {
     testBoxY = 300;
 
     // set the size of your draw board
-    setPreferredSize(new Dimension(72, 72));
+    setPreferredSize(new Dimension(720, 720));
     setVisible(true);
   }
 
@@ -26,9 +28,15 @@ public class Board extends JComponent implements KeyListener {
 
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-
+    boolean[][] map = new boolean[10][10];
     PositionedImage image = new PositionedImage("assets/floor.png", 0, 0);
-    image.draw(graphics);
+    for (int i = 0; i < map.length; i++) {
+      image.setPosX(i * 72);
+      for (int j = 0; j < map[i].length; j++) {
+        image.setPosY(j * 72);
+        image.draw(graphics);
+      }
+    }
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it

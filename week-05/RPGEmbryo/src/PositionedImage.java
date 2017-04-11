@@ -9,8 +9,8 @@ import java.io.IOException;
  */
 public class PositionedImage {
 
-  BufferedImage image;
-  int posX, posY;
+  private BufferedImage image;
+  private int posX, posY;
 
   public PositionedImage(String filename, int posX, int posY) {
     this.posX = posX;
@@ -26,5 +26,21 @@ public class PositionedImage {
     if (image != null) {
       graphics.drawImage(image, posX, posY, null);
     }
+  }
+
+  public int getPosX() {
+    return posX;
+  }
+
+  public int getPosY() {
+    return posY;
+  }
+
+  public void setPosX(int posX) {
+    this.posX = posX;
+  }
+
+  public void setPosY(int posY) {
+    this.posY = posY;
   }
 }
