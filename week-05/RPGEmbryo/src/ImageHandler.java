@@ -25,7 +25,7 @@ public class ImageHandler {
       e.printStackTrace();
     }
   }
-  
+
   public static ImageHandler getInstance() {
     if (singleInstance == null) {
       singleInstance = new ImageHandler();

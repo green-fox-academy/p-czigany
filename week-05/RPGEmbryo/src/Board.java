@@ -53,19 +53,26 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      hero.setPosY(hero.getPosY() - TILEHEIGHT);
+      if (hero.getPosY() > 0 * TILEHEIGHT) {
+        hero.setPosY(hero.getPosY() - TILEHEIGHT);
+      }
       hero.setImage(ImageHandler.getInstance().HERO_UP);
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      hero.setPosY(hero.getPosY() + TILEHEIGHT);
+      if (hero.getPosY() < 9 * TILEHEIGHT) {
+        hero.setPosY(hero.getPosY() + TILEHEIGHT);
+      }
       hero.setImage(ImageHandler.getInstance().HERO_DOWN);
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-      hero.setPosX(hero.getPosX() - TILEWIDTH);
+      if (hero.getPosX() > 0 * TILEWIDTH) {
+        hero.setPosX(hero.getPosX() - TILEWIDTH);
+      }
       hero.setImage(ImageHandler.getInstance().HERO_LEFT);
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      hero.setPosX(hero.getPosX() + TILEWIDTH);
+      if (hero.getPosX() < 9 * TILEWIDTH) {
+        hero.setPosX(hero.getPosX() + TILEWIDTH);
+      }
       hero.setImage(ImageHandler.getInstance().HERO_RIGHT);
     }
-    // and redraw to have a new picture with the new coordinates
     repaint();
   }
 }
