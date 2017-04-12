@@ -6,17 +6,25 @@ import java.util.ArrayList;
 public class Models {
 
   private ArrayList<GameObject> gameObjects;
+  private Map map;
 
   public Models() {
     gameObjects = new ArrayList<>();
-    Map map = new Map();
-    for (Tile tile :
+    map = new Map();
+    for (ArrayList<Tile> tileLine :
             map.getTileMap()) {
-      gameObjects.add(tile);
+      for (Tile tile :
+              tileLine) {
+        gameObjects.add(tile);
+      }
     }
   }
 
   public ArrayList<GameObject> getGameObjects() {
     return gameObjects;
+  }
+
+  public Map getMap() {
+    return map;
   }
 }

@@ -15,23 +15,15 @@ public class Board extends JComponent implements KeyListener {
   Hero hero;
 
   public Board() {
-
-    // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
-
-
     hero = new Hero(0, 0);
-
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-
-    // here you have a 720x720 canvas
-    // you can create and draw an image using the class below e.g.
-    Models models = new Models();
+    models = new Models();
     for (GameObject toDraw :
             models.getGameObjects()) {
       toDraw.draw(graphics);
@@ -53,22 +45,22 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      if (hero.getPosY() > 0 * TILEHEIGHT) {
+      if ((hero.getPosY() - TILEHEIGHT >= 0 * TILEHEIGHT) && !((models.getMap().getTileMap().get(hero.getPosX()/72).get((hero.getPosY() - TILEHEIGHT)/72)) instanceof Wall)) {
         hero.setPosY(hero.getPosY() - TILEHEIGHT);
       }
       hero.setImage(ImageHandler.getInstance().HERO_UP);
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      if (hero.getPosY() < 9 * TILEHEIGHT) {
+      if ((hero.getPosY() + TILEHEIGHT <= 9 * TILEHEIGHT) && !((models.getMap().getTileMap().get(hero.getPosX()/72).get((hero.getPosY() + TILEHEIGHT)/72)) instanceof Wall)) {
         hero.setPosY(hero.getPosY() + TILEHEIGHT);
       }
       hero.setImage(ImageHandler.getInstance().HERO_DOWN);
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-      if (hero.getPosX() > 0 * TILEWIDTH) {
+      if ((hero.getPosX() - TILEWIDTH >= 0 * TILEWIDTH) && !((models.getMap().getTileMap().get((hero.getPosX() - TILEWIDTH)/72).get((hero.getPosY())/72)) instanceof Wall)) {
         hero.setPosX(hero.getPosX() - TILEWIDTH);
       }
       hero.setImage(ImageHandler.getInstance().HERO_LEFT);
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      if (hero.getPosX() < 9 * TILEWIDTH) {
+      if ((hero.getPosX() + TILEWIDTH <= 9 * TILEWIDTH) && !((models.getMap().getTileMap().get((hero.getPosX() + TILEWIDTH)/72).get(hero.getPosY()/72)) instanceof Wall)) {
         hero.setPosX(hero.getPosX() + TILEWIDTH);
       }
       hero.setImage(ImageHandler.getInstance().HERO_RIGHT);
