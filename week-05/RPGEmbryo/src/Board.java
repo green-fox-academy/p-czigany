@@ -10,8 +10,6 @@ import java.awt.event.KeyListener;
  * Created by peter on 2017.04.10..
  */
 public class Board extends JComponent implements KeyListener {
-  static final int TILEWIDTH = 72;
-  static final int TILEHEIGHT = 72;
 
   int testBoxX;
   int testBoxY;
@@ -32,14 +30,9 @@ public class Board extends JComponent implements KeyListener {
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
     Map map = new Map();
-    for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
-        if (map.getMap()[i][j]) {
-          new Floor(i * TILEWIDTH, j * TILEHEIGHT).draw(graphics);
-        }
-        else {
-          new Wall(i * TILEWIDTH, j * TILEHEIGHT).draw(graphics);
-        }
+        map.getTile(i,j).draw(graphics);
       }
     }
   }
