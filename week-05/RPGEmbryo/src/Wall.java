@@ -4,6 +4,6 @@
 public class Wall extends Tile {
 
   public Wall(int posX, int posY) {
-    super("assets/wall.png", posX, posY);
+    super(ImageHandler.getInstance().WALL, posX, posY);
   }
 }

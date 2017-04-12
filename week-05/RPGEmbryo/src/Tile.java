@@ -1,9 +1,11 @@
+import java.awt.image.BufferedImage;
+
 /**
  * Created by peter on 2017.04.11..
  */
 public class Tile extends PositionedImage {
 
-  public Tile(String filename, int posX, int posY) {
-    super(filename, posX, posY);
+  public Tile(BufferedImage image, int posX, int posY) {
+    super(image, posX, posY);
   }
 }

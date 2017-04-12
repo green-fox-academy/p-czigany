@@ -12,14 +12,10 @@ public class PositionedImage {
   private BufferedImage image;
   private int posX, posY;
 
-  public PositionedImage(String filename, int posX, int posY) {
+  public PositionedImage(BufferedImage image, int posX, int posY) {
     this.posX = posX;
     this.posY = posY;
-    try {
-      image = ImageIO.read(new File(filename));
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    this.image = image;
   }
 
   public void draw(Graphics graphics) {
