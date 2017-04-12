@@ -1,7 +1,5 @@
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.nio.file.Paths;
-import java.util.List;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -29,11 +27,10 @@ public class Board extends JComponent implements KeyListener {
 
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-    Map map = new Map();
-        for (int i = 0; i < 10; i++) {
-      for (int j = 0; j < 10; j++) {
-        map.getTile(i,j).draw(graphics);
-      }
+    Models models = new Models();
+    for (GameObject toDraw :
+            models.getGameObjects()) {
+      toDraw.draw(graphics);
     }
   }
 

@@ -1,4 +1,5 @@
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,20 +9,24 @@ public class Map {
 
   int TILEHEIGHT = 72;
   int TILEWIDTH = 72;
-  private Tile[][] tileMap;
+  private ArrayList<Tile> tileMap;
 
   public Map() {
-    tileMap = new Tile[10][10];
+    tileMap = new ArrayList<>();
     FileHandler handler = new FileHandler();
     List<String> mapLines = handler.readFromFile(Paths.get("assets/map.txt"));
-    for (int i = 0; i < tileMap.length; i++) {
-      for (int j = 0; j < tileMap[i].length; j++) {
-        tileMap[i][j] = (mapLines.get(j).charAt(i) == '1') ? new Floor(i * TILEWIDTH, j * TILEHEIGHT) : new Wall(i * TILEWIDTH, j * TILEHEIGHT);
+    for (int i = 0; i < mapLines.size(); i++) {
+      for (int j = 0; j < mapLines.get(i).length(); j++) {
+        if (mapLines.get(j).charAt(i) == '1') {
+          tileMap.add(new Floor(i * TILEWIDTH, j * TILEHEIGHT));
+        } else if (mapLines.get(j).charAt(i) == '0') {
+          tileMap.add(new Wall(i * TILEWIDTH, j * TILEHEIGHT));
+        }
       }
     }
   }
 
-  public Tile getTile(int dimX, int dimY) {
-    return tileMap[dimX][dimY];
+  public ArrayList<Tile> getTileMap() {
+    return tileMap;
   }
 }
