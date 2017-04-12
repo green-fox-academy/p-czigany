@@ -14,7 +14,7 @@ public class Models {
             map.getTileMap()) {
       gameObjects.add(tile);
     }
-    gameObjects.add(new Hero);
+    gameObjects.add(new Hero());
   }
 
   public ArrayList<GameObject> getGameObjects() {
