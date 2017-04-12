@@ -10,8 +10,10 @@ public class Map {
   int TILEHEIGHT = 72;
   int TILEWIDTH = 72;
   private ArrayList<ArrayList<Tile>> tileMap;
+  int floorTiles;
 
   public Map() {
+    floorTiles = 0;
     tileMap = new ArrayList<>();
     FileHandler handler = new FileHandler();
     List<String> mapLines = handler.readFromFile(Paths.get("assets/map.txt"));
@@ -20,6 +22,7 @@ public class Map {
       for (int j = 0; j < mapLines.get(i).length(); j++) {
         if (mapLines.get(j).charAt(i) == '1') {
           tileMap.get(i).add(new Floor(i * TILEWIDTH, j * TILEHEIGHT));
+          floorTiles++;
         } else if (mapLines.get(j).charAt(i) == '0') {
           tileMap.get(i).add(new Wall(i * TILEWIDTH, j * TILEHEIGHT));
         }
@@ -29,5 +32,9 @@ public class Map {
 
   public ArrayList<ArrayList<Tile>> getTileMap() {
     return tileMap;
+  }
+
+  public int getFloorTiles() {
+    return floorTiles;
   }
 }
