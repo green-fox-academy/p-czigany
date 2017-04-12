@@ -1,5 +1,8 @@
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.nio.file.Paths;
+import java.util.List;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -28,13 +31,15 @@ public class Board extends JComponent implements KeyListener {
 
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-    boolean[][] map = new boolean[10][10];
-    PositionedImage image = new PositionedImage("assets/floor.png", 0, 0);
-    for (int i = 0; i < map.length; i++) {
-      image.setPosX(i * 72);
-      for (int j = 0; j < map[i].length; j++) {
-        image.setPosY(j * 72);
-        image.draw(graphics);
+    Map map = new Map();
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
+        if (map.getMap()[i][j]) {
+          new Floor(i * TILEWIDTH, j * TILEHEIGHT).draw(graphics);
+        }
+        else {
+          new Wall(i * TILEWIDTH, j * TILEHEIGHT).draw(graphics);
+        }
       }
     }
   }
