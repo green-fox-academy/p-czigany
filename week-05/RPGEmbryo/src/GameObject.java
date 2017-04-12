@@ -20,4 +20,28 @@ public class GameObject {
       graphics.drawImage(image, posX, posY, null);
     }
   }
+
+  public BufferedImage getImage() {
+    return image;
+  }
+
+  public int getPosX() {
+    return posX;
+  }
+
+  public int getPosY() {
+    return posY;
+  }
+
+  public void setImage(BufferedImage image) {
+    this.image = image;
+  }
+
+  public void setPosX(int posX) {
+    this.posX = posX;
+  }
+
+  public void setPosY(int posY) {
+    this.posY = posY;
+  }
 }

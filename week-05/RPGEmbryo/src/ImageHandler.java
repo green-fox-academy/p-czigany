@@ -8,11 +8,9 @@ import javax.imageio.ImageIO;
  */
 public class ImageHandler {
 
-  // fields?
   private static ImageHandler singleInstance = null;
   public BufferedImage FLOOR, WALL, HERO_DOWN, HERO_UP, HERO_LEFT, HERO_RIGHT, SKELETON, BOSS;
 
-  // (default) constructor?
   private ImageHandler() {
     try {
       FLOOR = ImageIO.read(new File("assets/floor.png"));
@@ -27,8 +25,7 @@ public class ImageHandler {
       e.printStackTrace();
     }
   }
-
-  // method(s)?
+  
   public static ImageHandler getInstance() {
     if (singleInstance == null) {
       singleInstance = new ImageHandler();
