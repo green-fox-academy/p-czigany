@@ -1,4 +1,4 @@
-package greenFoxOrganization;
+package greenfoxorganization;
 
 /**
  * Created by peter on 2017.04.04..

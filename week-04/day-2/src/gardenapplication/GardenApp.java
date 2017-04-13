@@ -1,4 +1,4 @@
-package theGardenApplication;
+package gardenapplication;
 
 /**
  * Created by peter on 2017.04.04..

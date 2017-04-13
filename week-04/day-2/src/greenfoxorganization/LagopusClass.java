@@ -1,4 +1,4 @@
-package greenFoxOrganization;
+package greenfoxorganization;
 
 import java.util.ArrayList;
 import java.util.List;

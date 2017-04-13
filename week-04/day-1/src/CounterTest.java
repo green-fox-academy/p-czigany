@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Created by peter on 2017.04.03..
  */
-class CounterTest {
+public class CounterTest {
 
   Counter c = new Counter();
 

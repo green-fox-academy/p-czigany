@@ -17,8 +17,8 @@ public class FleetOfThings {
     items.add(new Thing("Remove the obstacles"));
     items.add(new Thing("Stand up"));
     items.add(new Thing("Eat lunch"));
-    for (Thing item:
-    items) {
+    for (Thing item :
+            items) {
       fleet.add(item);
     }
     items.get(2).complete();

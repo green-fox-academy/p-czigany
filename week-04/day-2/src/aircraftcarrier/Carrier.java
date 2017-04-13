@@ -1,4 +1,4 @@
-package theAircraftCarrier;
+package aircraftcarrier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,10 +99,6 @@ public class Carrier {
       }
       return status;
     }
-  }
-
-  public List<Aircraft> getCarriedPlanes() {
-    return carriedPlanes;
   }
 
   public int getAmmoStored() {

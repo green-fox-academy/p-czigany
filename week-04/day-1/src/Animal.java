@@ -3,23 +3,23 @@
  */
 public class Animal {
 
-  private int hunger;
-  private int thirst;
+  int hunger;
+  int thirst;
 
-  public Animal() {
-    this.hunger = 50;
-    this.thirst = 50;
+  Animal() {
+    hunger = 50;
+    thirst = 50;
   }
 
-  public void eat() {
+  void eat() {
     hunger--;
   }
 
-  public void drink() {
+  void drink() {
     thirst--;
   }
 
-  public void play() {
+  void play() {
     hunger++;
     thirst++;
   }

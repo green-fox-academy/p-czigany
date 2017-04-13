@@ -1,4 +1,4 @@
-package theGardenApplication;
+package gardenapplication;
 
 /**
  * Created by peter on 2017.04.04..
@@ -6,21 +6,16 @@ package theGardenApplication;
 public class Plant {
 
   private String color;
-  private double waterHeld;
+  private double waterHeld, absorbRatio;
   private int wateredIf;
-  private double absorbRatio;
 
   // Constructors:
 
-  public Plant() {
-    this.waterHeld = 0;
-  }
-
   public Plant(String color, int wateredIf, double absorbRatio) {
+    this.waterHeld = 0;
     this.color = color;
     this.wateredIf = wateredIf;
     this.absorbRatio = absorbRatio;
-    this.waterHeld = 0;
   }
 
   // Getters:
