@@ -10,4 +10,10 @@ public class ElectricGuitar extends StringedInstrument {
     numberOfStrings = 6;
     sound = "Twang";
   }
+
+  public ElectricGuitar(int strings) {
+    name = "Electric Guitar";
+    numberOfStrings = strings;
+    sound = "Twang";
+  }
 }

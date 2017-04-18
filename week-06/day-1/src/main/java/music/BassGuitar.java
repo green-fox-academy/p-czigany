@@ -10,4 +10,10 @@ public class BassGuitar extends StringedInstrument {
     name = "Bass Guitar";
     sound = "Duum-duum-duum";
   }
+
+  public BassGuitar(int strings) {
+    numberOfStrings = strings;
+    name = "Bass Guitar";
+    sound = "Duum-duum-duum";
+  }
 }
