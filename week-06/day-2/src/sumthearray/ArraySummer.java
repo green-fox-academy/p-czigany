@@ -16,6 +16,7 @@ public class ArraySummer {
     } catch (ArrayIndexOutOfBoundsException e) {
       System.out.println("ArrayIndexOutOfBoundsException");
     }
+    System.out.println(Arrays.toString(inputArray));
     return sum;
   }
 }
