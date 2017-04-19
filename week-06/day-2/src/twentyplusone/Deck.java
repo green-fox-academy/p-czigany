@@ -23,15 +23,15 @@ public class Deck {
   }
 
   public Card pullFirst() {
-    return cards.get(0);
+    return cards.remove(0);
   }
 
   public Card pullLast() {
-    return cards.get(cards.size() - 1);
+    return cards.remove(cards.size() - 1);
   }
 
   public Card pullRandom() {
     int randomIndex = (int) (Math.random() * cards.size());
-    return cards.get(randomIndex);
+    return cards.remove(randomIndex);
   }
 }
