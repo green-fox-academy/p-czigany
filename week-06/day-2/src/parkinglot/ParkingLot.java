@@ -1,5 +1,6 @@
 package parkinglot;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,6 +9,10 @@ import java.util.List;
 public class ParkingLot {
 
   private List<Car> parkedCars;
+
+  public ParkingLot() {
+    this.parkedCars = new ArrayList<>();
+  }
 
   public Car randomCar() {
     return new Car(randomColor(), randomType());
