@@ -32,7 +32,30 @@ public class ParkingLotApp {
           sum++;
         }
       }
-      System.out.println(currentColor.name() + ": " + sum + " db");
+      System.out.println(currentColor.name() + ": " + sum + " pieces");
     }
+
+    String mostPopular = "GREEN SUZUKI";
+    int maxPopularity = 0;
+    for (CarColor currentColor :
+            CarColor.values()) {
+      for (CarType currentType :
+              CarType.values()) {
+        int sum = 0;
+        for (Car examinedCar :
+                myParkingLot.getParkedCars()) {
+          if (examinedCar.getColor().equals(currentColor) && examinedCar.getType()
+                  .equals(currentType)) {
+            sum++;
+          }
+        }
+        System.out.println(currentColor.name() + " " + currentType.name() + ": " + sum + " pieces");
+        if (sum > maxPopularity) {
+          maxPopularity = sum;
+          mostPopular = currentColor.name() + " " + currentType.name();
+        }
+      }
+    }
+    System.out.println("There are " + maxPopularity + " pieces of the most popular car in the parking lot. It is the " + mostPopular);
   }
 }
