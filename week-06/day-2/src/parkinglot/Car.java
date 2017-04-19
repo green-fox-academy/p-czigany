@@ -16,4 +16,8 @@ public class Car {
   public CarType getType() {
     return type;
   }
+
+  public CarColor getColor() {
+    return color;
+  }
 }

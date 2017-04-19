@@ -10,6 +10,7 @@ public class ParkingLotApp {
     for (int i = 0; i < 256; i++) {
       myParkingLot.getParkedCars().add(myParkingLot.randomCar());
     }
+
     for (CarType currentType :
             CarType.values()) {
       int sum = 0;
@@ -20,6 +21,18 @@ public class ParkingLotApp {
         }
       }
       System.out.println(currentType.name() + ": " + sum + " db");
+    }
+
+    for (CarColor currentColor :
+            CarColor.values()) {
+      int sum = 0;
+      for (Car examinedCar :
+              myParkingLot.getParkedCars()) {
+        if (examinedCar.getColor().equals(currentColor)) {
+          sum++;
+        }
+      }
+      System.out.println(currentColor.name() + ": " + sum + " db");
     }
   }
 }
