@@ -12,4 +12,8 @@ public class Car {
     this.color = color;
     this.type = type;
   }
+
+  public CarType getType() {
+    return type;
+  }
 }

@@ -10,5 +10,16 @@ public class ParkingLotApp {
     for (int i = 0; i < 256; i++) {
       myParkingLot.getParkedCars().add(myParkingLot.randomCar());
     }
+    for (CarType currentType :
+            CarType.values()) {
+      int sum = 0;
+      for (Car examinedCar :
+              myParkingLot.getParkedCars()) {
+        if (examinedCar.getType().equals(currentType)) {
+          sum++;
+        }
+      }
+      System.out.println(currentType.name() + ": " + sum + " db");
+    }
   }
 }
