@@ -39,4 +39,8 @@ public class ParkingLot {
       return CarType.VOLVO;
     }
   }
+
+  public List<Car> getParkedCars() {
+    return parkedCars;
+  }
 }
