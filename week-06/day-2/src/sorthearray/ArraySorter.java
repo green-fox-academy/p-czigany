@@ -1,5 +1,7 @@
 package sorthearray;
 
+import java.util.Arrays;
+
 /**
  * Created by peter on 2017.04.19..
  */
@@ -24,5 +26,6 @@ public class ArraySorter {
         System.out.println("Null pointer exception!");
       }
     }
+    System.out.println(Arrays.toString(inputArray));
   }
 }
