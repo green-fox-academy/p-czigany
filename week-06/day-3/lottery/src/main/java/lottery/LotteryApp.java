@@ -14,6 +14,7 @@ public class LotteryApp {
     OptionParser parser = new OptionParser();
     parser.accepts("f").withRequiredArg();
     parser.accepts("y").withRequiredArg();
+    parser.accepts("o").withRequiredArg();
     OptionSet options = parser.parse(args);
     String sourcePath = "assets/otos.csv";
     if (options.has("f")) {
@@ -34,6 +35,9 @@ public class LotteryApp {
       linesToPrint = tableLines;
     }
     String targetPath = "assets/output.csv";
+    if (options.has("o")) {
+      targetPath = options.valueOf("o").toString();
+    }
     csvFiles.writeTableLines(targetPath, linesToPrint);
   }
 }
