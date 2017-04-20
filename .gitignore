@@ -5,3 +5,10 @@ out
 *.class
 settings.gradle
 gradle-wrapper.properties
+.gradle
+*.jar
+*.lock
+*.bin
+*.MF
+build
+
