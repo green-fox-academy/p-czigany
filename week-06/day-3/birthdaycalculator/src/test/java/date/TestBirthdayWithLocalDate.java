@@ -56,4 +56,15 @@ public class TestBirthdayWithLocalDate {
   public void testIsAnniversaryTodayWithNull() throws Exception {
     birthdayCalculator.isAnniversaryToday(null);
   }
+
+  @Test
+  public void testCalculateAgeInYears() throws Exception {
+    int expected = LocalDate.now().getYear() - EXPECTED_DATE.getYear();
+    assertEquals(expected, birthdayCalculator.calculateAgeInYears(EXPECTED_DATE));
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testCalculateAgeInYearsWithNull() throws Exception {
+    birthdayCalculator.calculateAgeInYears(null);
+  }
 }
