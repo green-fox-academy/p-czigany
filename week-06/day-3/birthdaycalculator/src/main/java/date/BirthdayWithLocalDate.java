@@ -15,4 +15,11 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     return LocalDate.parse(str, formatter);
   }
+
+  @Override
+  public String printMonthAndDay(LocalDate date) {
+    // TODO - return the date formatted: month & day (MM. dd.)
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM. dd.");
+    return date.format(formatter);
+  }
 }

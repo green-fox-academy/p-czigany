@@ -32,4 +32,15 @@ public class TestBirthdayWithLocalDate {
   public void testParseDateWithNull() throws Exception {
     birthdayCalculator.parseDate(null);
   }
+
+  @Test
+  public void testPrintMonthAndDay() throws Exception {
+    String monthAndDay = birthdayCalculator.printMonthAndDay(EXPECTED_DATE);
+    assertEquals("11. 30.", monthAndDay);
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testPrintMonthAndDayWithNull() throws Exception {
+    birthdayCalculator.printMonthAndDay(null);
+  }
 }
