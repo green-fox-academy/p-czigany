@@ -12,4 +12,6 @@ public interface BirthdayCalculator<T> {
   boolean isAnniversaryToday(T date);
 
   int calculateAgeInYears(T birthday);
+
+  int calculateDaysToNextAnniversary(T date);
 }

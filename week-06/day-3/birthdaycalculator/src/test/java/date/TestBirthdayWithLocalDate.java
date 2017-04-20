@@ -67,4 +67,37 @@ public class TestBirthdayWithLocalDate {
   public void testCalculateAgeInYearsWithNull() throws Exception {
     birthdayCalculator.calculateAgeInYears(null);
   }
+
+  @Test
+  public void testCalculateDaysToNextAnniversary() throws Exception {
+    int expected = getExpectedDaysToNextAnniversary(EXPECTED_DATE);
+    assertEquals(expected, birthdayCalculator.calculateDaysToNextAnniversary(EXPECTED_DATE));
+
+    LocalDate localDate = LocalDate.parse("1980-01-12", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+    expected = getExpectedDaysToNextAnniversary(localDate);
+    assertEquals(expected, birthdayCalculator.calculateDaysToNextAnniversary(localDate));
+
+    localDate = LocalDate.now();
+    expected = getExpectedDaysToNextAnniversary(localDate);
+    assertEquals(expected, birthdayCalculator.calculateDaysToNextAnniversary(localDate));
+  }
+
+  private int getExpectedDaysToNextAnniversary(LocalDate date) {
+    LocalDate now = LocalDate.now();
+    int expected;
+    if (now.getDayOfYear() == date.getDayOfYear()) {
+      expected = 0;
+    } else if (now.getDayOfYear() > date.getDayOfYear()) {
+      return LocalDate.of(now.getYear(), 12, 31).getDayOfYear() - now.getDayOfYear() + date
+              .getDayOfYear();
+    } else {
+      return date.getDayOfYear() - now.getDayOfYear();
+    }
+    return expected;
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testCalculateDaysToNextAnniversaryWithNull() throws Exception {
+    birthdayCalculator.calculateDaysToNextAnniversary(null);
+  }
 }
