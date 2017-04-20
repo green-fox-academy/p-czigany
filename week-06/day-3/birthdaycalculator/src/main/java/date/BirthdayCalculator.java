@@ -8,4 +8,6 @@ public interface BirthdayCalculator<T> {
   T parseDate(String str);
 
   String printMonthAndDay(T date);
+
+  boolean isAnniversaryToday(T date);
 }

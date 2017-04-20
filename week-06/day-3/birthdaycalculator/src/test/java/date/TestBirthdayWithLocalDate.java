@@ -14,7 +14,8 @@ import static org.junit.Assert.assertEquals;
 public class TestBirthdayWithLocalDate {
 
   private static final String EXPECTED_DATE_STR = "2016-11-30";
-  private static final LocalDate EXPECTED_DATE = LocalDate.parse(EXPECTED_DATE_STR, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+  private static final LocalDate EXPECTED_DATE = LocalDate
+          .parse(EXPECTED_DATE_STR, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
   private BirthdayCalculator<LocalDate> birthdayCalculator = new BirthdayWithLocalDate();
 
@@ -42,5 +43,17 @@ public class TestBirthdayWithLocalDate {
   @Test(expected = NullPointerException.class)
   public void testPrintMonthAndDayWithNull() throws Exception {
     birthdayCalculator.printMonthAndDay(null);
+  }
+
+  @Test
+  public void testIsAnniversaryToday() throws Exception {
+    String pattern = "MM. dd.";
+    boolean expected = EXPECTED_DATE.toString().equals(LocalDate.now().toString());
+    assertEquals(expected, birthdayCalculator.isAnniversaryToday(EXPECTED_DATE));
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testIsAnniversaryTodayWithNull() throws Exception {
+    birthdayCalculator.isAnniversaryToday(null);
   }
 }

@@ -22,4 +22,10 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM. dd.");
     return date.format(formatter);
   }
+
+  @Override
+  public boolean isAnniversaryToday(LocalDate date) {
+    // TODO - return with true if today is the same month+day as date
+    return (LocalDate.now().getMonth().equals(date.getMonth()) && LocalDate.now().getDayOfMonth() == date.getDayOfMonth());
+  }
 }
