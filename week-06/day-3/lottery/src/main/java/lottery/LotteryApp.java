@@ -12,9 +12,13 @@ public class LotteryApp {
 
   public static void main(String[] args) {
     OptionParser parser = new OptionParser();
+    parser.accepts("f").withRequiredArg();
     parser.accepts("y").withRequiredArg();
     OptionSet options = parser.parse(args);
     String sourcePath = "assets/otos.csv";
+    if (options.has("f")) {
+      sourcePath = options.valueOf("f").toString();
+    }
     CsvFileHandler csvFiles = new CsvFileHandler();
     List<String[]> tableLines = csvFiles.getTableLines(sourcePath);
     List<String[]> linesToPrint = new ArrayList<>();
