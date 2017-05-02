@@ -1,7 +1,7 @@
 package com.greenfox.springstart.controllers;
 
+import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloRESTController {
 
+  AtomicLong toID = new AtomicLong(1);
+
   @RequestMapping(value = "/greeting")
   public Greeting greeting(@RequestParam("name") String name) {
-    return new Greeting(1, "Hello " + name + "!");
+    return new Greeting(toID.getAndIncrement(), "Hello " + name + "!");
   }
 }

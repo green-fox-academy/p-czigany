@@ -7,14 +7,10 @@ import lombok.Setter;
 /**
  * Created by peter on 2017.05.02..
  */
+@Getter
+@Setter
 @AllArgsConstructor
 public class Greeting {
-
-  @Getter
-  @Setter
   long id;
-
-  @Getter
-  @Setter
   String content;
 }
