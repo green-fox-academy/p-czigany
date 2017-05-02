@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloRESTController {
 
-  AtomicLong toID = new AtomicLong(1);
+  private AtomicLong toID = new AtomicLong(1);
 
   @RequestMapping(value = "/greeting")
   public Greeting greeting(@RequestParam("name") String name) {
