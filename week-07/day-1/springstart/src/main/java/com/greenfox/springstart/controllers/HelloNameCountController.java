@@ -21,6 +21,7 @@ public class HelloNameCountController {
     public String greeting(@RequestParam("name") String name, Model m) {
       m.addAttribute("name", name);
       m.addAttribute("reloads", reloads.getAndIncrement());
+      m.addAttribute("greetingPhrase", "Hello");
       return "greetingtime";
     }
   }
