@@ -20,9 +20,10 @@ public class HelloMulticulturalController {
 
   @RequestMapping(value = "/web/greetmulticultural")
   public String greeting(@RequestParam("name") String name, Model m) {
-    m.addAttribute("greetingPhrase", hellos[(reloads.intValue() - 1) % hellos.length]);
+    m.addAttribute("fontSize", ((int) (Math.random() * 30)) + 8);
+    m.addAttribute("colorCode", "rgb(" + String.valueOf((int) (Math.random() * 256)) + ", " + String.valueOf((int) (Math.random() * 256)) + ", " + String.valueOf((int) (Math.random() * 256)) + ")");
+    m.addAttribute("greetingPhrase", hellos[((int) (Math.random() * hellos.length)) % hellos.length]);
     m.addAttribute("name", name);
-    m.addAttribute("reloads", reloads.getAndIncrement());
-    return "greetingtime";
+    return "colorfulworld";
   }
 }
