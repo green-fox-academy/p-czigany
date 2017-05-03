@@ -12,16 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HelloNameCountController {
 
-  @Controller
-  public class HelloWebController {
+  private AtomicLong reloads = new AtomicLong(1);
 
-    private AtomicLong reloads = new AtomicLong(1);
-
-    @RequestMapping(value = "/web/greetingtime")
-    public String greeting(@RequestParam("name") String name, Model m) {
-      m.addAttribute("name", name);
-      m.addAttribute("reloads", reloads.getAndIncrement());
-      return "greetingtime";
-    }
+  @RequestMapping(value = "/web/greetingtime")
+  public String greeting(@RequestParam("name") String name, Model m) {
+    m.addAttribute("name", name);
+    m.addAttribute("reloads", reloads.getAndIncrement());
+    return "greetingtime";
   }
 }
