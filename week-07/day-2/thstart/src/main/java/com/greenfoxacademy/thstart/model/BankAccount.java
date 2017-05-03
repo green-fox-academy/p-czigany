@@ -4,6 +4,7 @@ package com.greenfoxacademy.thstart.model;
  * Created by peter on 2017.05.03..
  */
 public class BankAccount {
+
   private String name, animalType;
   private int balance;
 
@@ -11,5 +12,17 @@ public class BankAccount {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getAnimalType() {
+    return animalType;
+  }
+
+  public int getBalance() {
+    return balance;
   }
 }
