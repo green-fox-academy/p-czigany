@@ -8,20 +8,18 @@
   <body>
     <table>
       <tr>
-        <th>Index</th>
         <th>Profession</th>
         <th>Name</th>
         <th>Balance</th>
         <th>Species</th>
         <th>Good?</th>
       </tr>
-      <tr th:style="${(isKing) ? 'color: goldenrod; background-color: black' : ''}">
-        <td th:text="${index}"/>
-        <td th:text="${(isKing) ? 'King' : 'Not king'}"/>
-        <td th:text="${name}"/>
-        <td th:text="${#numbers.formatDecimal(balance, 0, 'NONE', 2, 'POINT')}"/>
-        <td th:text="${animalType}"/>
-        <td th:text="${(isGood) ? 'Good One' : 'Bad Guy'}"/>
+      <tr th:each="account : ${bankAccountList}" th:style="${(account.king) ? 'color: goldenrod; background-color: black' : ''}">
+        <td th:text="${(account.king) ? 'King' : 'Not king'}"/>
+        <td th:text="${account.name}"/>
+        <td th:text="${#numbers.formatDecimal(account.balance, 0, 'NONE', 2, 'POINT')}"/>
+        <td th:text="${account.animalType}"/>
+        <td th:text="${(account.good) ? 'Good One' : 'Bad Guy'}"/>
       </tr>
     </table>
   </body>

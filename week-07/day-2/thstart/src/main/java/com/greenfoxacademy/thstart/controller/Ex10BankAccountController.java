@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by peter on 2017.05.03..
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class Ex10BankAccountController {
 
   @RequestMapping(value = "/ex10")
-  public String accountOfClient(@RequestParam("client") int index, Model model) {
+  public String accountList(Model model) {
     ArrayList<BankAccount3> bankAccountList = new ArrayList<>();
     bankAccountList.add(new BankAccount3("Nala", 3000, "lion", false, true));
     bankAccountList.add(new BankAccount3("Rafiki", 500, "mandrill", false, true));
@@ -23,13 +22,7 @@ public class Ex10BankAccountController {
     bankAccountList.add(new BankAccount3("Simba", 2000, "lion", true, true));
     bankAccountList.add(new BankAccount3("Timon", 300000, "meerkat", false, true));
     bankAccountList.add(new BankAccount3("Scar", 3000, "lion", false, false));
-    BankAccount3 account = bankAccountList.get(index - 1);
-    model.addAttribute("isGood", account.isGood());
-    model.addAttribute("isKing", account.isKing());
-    model.addAttribute("index", index);
-    model.addAttribute("name", account.getName());
-    model.addAttribute("balance", account.getBalance());
-    model.addAttribute("animalType", account.getAnimalType());
+    model.addAttribute("bankAccountList", bankAccountList);
     return "bankaccount10";
   }
 }
