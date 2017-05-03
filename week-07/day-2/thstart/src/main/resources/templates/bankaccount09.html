@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Thymeleaf Exercise #09</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+  <span th:switch="${isGood}">
+    <p th:case="true">Good One</p>
+    <p th:case="false">Bad Guy</p>
+  </span>
+  <p th:if="${isKing}" style="color: goldenrod; background-color: black" th:text="'HE IS KING!!!1!!1! Index: ' + ${index} + ', Name: ' + ${name} +', Balance: ' + ${#numbers.formatDecimal(balance, 0, 'NONE', 2, 'POINT')} + ' Zebra, Animal: ' + ${animalType}"/>
+  <p th:unless="${isKing}" th:text="'Index: ' + ${index} + ', Name: ' + ${name} +', Balance: ' + ${#numbers.formatDecimal(balance, 0, 'NONE', 2, 'POINT')} + ' Zebra, Animal: ' + ${animalType}"/>
+  </body>
+</html>
