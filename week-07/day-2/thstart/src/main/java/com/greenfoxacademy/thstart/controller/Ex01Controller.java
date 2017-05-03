@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class Ex01Controller {
 
-  @RequestMapping(value = "/new")
+  @RequestMapping(value = "/ex01")
   public String simba(Model model) {
     BankAccount lionKing = new BankAccount("Simba", 2000, "lion");
     model.addAttribute("name", lionKing.getName());
