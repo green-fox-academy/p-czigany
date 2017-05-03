@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Thymeleaf Exercise #10</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Index</th>
+        <th>Profession</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Species</th>
+        <th>Good?</th>
+      </tr>
+      <tr th:style="${(isKing) ? 'color: goldenrod; background-color: black' : ''}">
+        <td th:text="${index}"/>
+        <td th:text="${(isKing) ? 'King' : 'Not king'}"/>
+        <td th:text="${name}"/>
+        <td th:text="${#numbers.formatDecimal(balance, 0, 'NONE', 2, 'POINT')}"/>
+        <td th:text="${animalType}"/>
+        <td th:text="${(isGood) ? 'Good One' : 'Bad Guy'}"/>
+      </tr>
+    </table>
+  </body>
+</html>
