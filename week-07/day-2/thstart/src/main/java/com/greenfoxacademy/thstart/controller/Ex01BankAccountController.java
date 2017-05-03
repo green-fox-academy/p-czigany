@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by peter on 2017.05.03..
  */
 @Controller
-public class Ex01Controller {
+public class Ex01BankAccountController {
 
   @RequestMapping(value = "/ex01")
   public String simba(Model model) {

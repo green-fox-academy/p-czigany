@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by peter on 2017.05.03..
  */
 @Controller
-public class Ex03Controller {
+public class Ex02BankAccountController {
 
-  @RequestMapping(value = "/ex03")
+  @RequestMapping(value = "/ex02")
   public String simba(Model model) {
     BankAccount lionKing = new BankAccount("Simba", 2000, "lion");
     model.addAttribute("name", lionKing.getName());
     model.addAttribute("balance", lionKing.getBalance());
     model.addAttribute("animalType", lionKing.getAnimalType());
-    return "bankaccount03";
+    return "bankaccount02";
   }
 }
