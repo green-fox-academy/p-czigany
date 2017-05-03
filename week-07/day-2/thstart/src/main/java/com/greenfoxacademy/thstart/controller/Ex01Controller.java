@@ -17,6 +17,6 @@ public class Ex01Controller {
     model.addAttribute("name", lionKing.getName());
     model.addAttribute("balance", lionKing.getBalance());
     model.addAttribute("animalType", lionKing.getAnimalType());
-    return "bankaccount";
+    return "bankaccount01";
   }
 }
