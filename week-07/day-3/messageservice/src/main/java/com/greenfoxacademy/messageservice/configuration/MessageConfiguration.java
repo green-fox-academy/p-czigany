@@ -1,5 +1,6 @@
 package com.greenfoxacademy.messageservice.configuration;
 
+import com.greenfoxacademy.messageservice.service.EmailService;
 import com.greenfoxacademy.messageservice.service.MessageService;
 import com.greenfoxacademy.messageservice.service.TwitterService;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,6 @@ public class MessageConfiguration {
 
   @Bean
   public MessageService getEmailService() {
-    return new TwitterService();
+    return new EmailService();
   }
 }
