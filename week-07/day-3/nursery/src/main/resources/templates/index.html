@@ -6,11 +6,13 @@
   </head>
   <body>
     <ul>
-      <li>Information</li>
+      <li><a th:href="@{/}">Information</a></li>
     </ul>
+    <h1 th:text="${fox.name} + '\'s Info Page'"/>
     <img src="images/greenfox.png" alt="Your pet's picture" />
-    <p th:text="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. Knows ' + ${fox.tricks.size()} + ' tricks.'" />
-    <h1>Known tricks</h1>
+    <p th:text="'Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '.'"/>
+    <p th:text="'Knows ' + ${fox.tricks.size()} + ' tricks.'" />
+    <h2>Known tricks</h2>
     <p th:if="${fox.tricks.size() == 0}">Inexperienced. Knows no tricks.</p>
     <ul th:unless="${fox.tricks.size() == 0}">
       <li th:each="trick : ${fox.tricks}" th:text="${trick}"/>
