@@ -14,9 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 
   @Autowired
-  ModelAndViewFactory modelAndViewFactory;
+  private ModelAndViewFactory modelAndViewFactory;
   @Autowired
-  Fox fox;
+  private Fox fox;
 
   @RequestMapping("/")
   public ModelAndView index() {
