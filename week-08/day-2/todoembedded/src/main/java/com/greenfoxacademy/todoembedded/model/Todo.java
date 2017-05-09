@@ -1,10 +1,11 @@
 package com.greenfoxacademy.todoembedded.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created by peter on 2017.05.09..
@@ -12,17 +13,28 @@ import javax.persistence.Id;
 @Entity
 public class Todo {
 
-  @Column
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
 
-  @Column
   private String title;
 
-  @Column(columnDefinition = "false")
   private boolean isUrgent;
 
-  @Column(columnDefinition = "false")
   private boolean isDone;
+
+  public Todo() {
+
+  }
+
+  public Todo(String title) {
+    this.title = title;
+    isUrgent = false;
+    isDone = false;
+  }
+
+  @Override
+  public String toString() {
+    return title;
+  }
 }
