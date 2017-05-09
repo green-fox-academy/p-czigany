@@ -1,5 +1,7 @@
 package com.greenfoxacademy.todoembedded.controllers;
 
+import com.greenfoxacademy.todoembedded.domain.TodoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller(value = "/todo")
 public class TodoController {
+
+  @Autowired
+  private TodoRepository repository;
 
   @ResponseBody
   @RequestMapping(value = {"/", "/list"})
