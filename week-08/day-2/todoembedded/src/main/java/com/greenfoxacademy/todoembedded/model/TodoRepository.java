@@ -1,4 +1,4 @@
-package com.greenfoxacademy.todoembedded.domain;
+package com.greenfoxacademy.todoembedded.model;
 
 import org.springframework.data.repository.CrudRepository;
 
