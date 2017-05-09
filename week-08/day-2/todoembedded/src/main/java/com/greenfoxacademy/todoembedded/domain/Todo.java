@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @Entity
 public class Todo {
 
-  Column
+  @Column
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
