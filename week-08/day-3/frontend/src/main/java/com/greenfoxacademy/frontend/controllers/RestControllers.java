@@ -1,6 +1,9 @@
 package com.greenfoxacademy.frontend.controllers;
 
 import com.greenfoxacademy.frontend.service.Appendage;
+import com.greenfoxacademy.frontend.service.ArrayCounter;
+import com.greenfoxacademy.frontend.service.ArrayInput;
+import com.greenfoxacademy.frontend.service.ArrayResult;
 import com.greenfoxacademy.frontend.service.DoUntil;
 import com.greenfoxacademy.frontend.service.Doubling;
 import com.greenfoxacademy.frontend.service.ErrorObj;
@@ -67,5 +70,18 @@ public class RestControllers {
     } else {
       return new Result(0);
     }
+  }
+
+  @RequestMapping(value = "/arrays", method = RequestMethod.POST)
+  public Object arrayCount(@RequestBody ArrayInput input) {
+    switch (input.getWhat()) {
+      case "sum":
+        return new Result(new ArrayCounter().sum(input.getNumbers()));
+      case "multiply":
+        return new Result(new ArrayCounter().multiply(input.getNumbers()));
+      case "double":
+        return new ArrayResult(new ArrayCounter().doubling(input.getNumbers()));
+    }
+    return new Result(0);
   }
 }
