@@ -11,8 +11,8 @@ public class ErrorObj {
 
   }
 
-  public ErrorObj(String error) {
-    this.error = error;
+  public ErrorObj(String errorEnd) {
+    error = "Please provide " + errorEnd + "!";
   }
 
   public String getError() {

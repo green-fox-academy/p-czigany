@@ -2,6 +2,7 @@ package com.greenfoxacademy.frontend.controllers;
 
 import com.greenfoxacademy.frontend.service.Doubling;
 import com.greenfoxacademy.frontend.service.ErrorObj;
+import com.greenfoxacademy.frontend.service.Greeting;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +17,12 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 public class RestControllers {
 
   @ExceptionHandler(MissingServletRequestParameterException.class)
-  public ErrorObj missParam() {
-    return new ErrorObj("Please provide an input!");
+  public ErrorObj missParam(MissingServletRequestParameterException e) {
+    if (e.getParameterName().equals("title") || e.getParameterName().equals("name")) {
+      return new ErrorObj("a " + e.getParameterName());
+    } else {
+      return new ErrorObj("an input");
+    }
   }
 
   @ExceptionHandler(MethodArgumentTypeMismatchException.class)
@@ -28,5 +33,10 @@ public class RestControllers {
   @RequestMapping(value = "/doubling")
   public Doubling twice(@RequestParam() int input) {
     return new Doubling(input);
+  }
+
+  @RequestMapping(value = "/greeter")
+  public Greeting greet(@RequestParam("name") String name, @RequestParam("title") String title) {
+    return new Greeting(name, title);
   }
 }
