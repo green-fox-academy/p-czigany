@@ -22,6 +22,7 @@ public class Post {
 
   public Post() {
     this.timestamp = new Timestamp(System.currentTimeMillis() / 1000);
+    score = 0;
   }
 
   public long getId() {
