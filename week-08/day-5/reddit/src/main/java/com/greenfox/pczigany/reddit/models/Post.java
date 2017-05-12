@@ -16,9 +16,13 @@ public class Post {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
-  String title, href;
-  Timestamp timestamp;
-  int score;
+  private String title, href;
+  private Timestamp timestamp;
+  private int score;
+
+  public Post() {
+    this.timestamp = new Timestamp(System.currentTimeMillis() / 1000);
+  }
 
   public long getId() {
     return id;
