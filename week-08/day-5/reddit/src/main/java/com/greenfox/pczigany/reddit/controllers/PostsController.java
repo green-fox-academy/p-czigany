@@ -5,6 +5,7 @@ import com.greenfox.pczigany.reddit.models.PostRepository;
 import com.greenfox.pczigany.reddit.services.PostInput;
 import com.greenfox.pczigany.reddit.services.PostList;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,5 +32,21 @@ public class PostsController {
     Post post = new Post(input.getTitle(), input.getHref());
     repository.save(post);
     return post;
+  }
+
+  @RequestMapping(value = "/posts/{id}/upvote", method = RequestMethod.PUT)
+  public Post upvote(@PathVariable("id") long id) {
+    Post post = repository.findOne(id);
+    post.setScore(post.getScore() + 1);
+    repository.save(post);
+    return repository.findOne(id);
+  }
+
+  @RequestMapping(value = "/posts/{id}/downvote", method = RequestMethod.PUT)
+  public Post downvote(@PathVariable("id") long id) {
+    Post post = repository.findOne(id);
+    post.setScore(post.getScore() - 1);
+    repository.save(post);
+    return repository.findOne(id);
   }
 }
