@@ -19,7 +19,7 @@ public class PostsController {
   @Autowired
   private PostRepository repository;
 
-  @RequestMapping(value = "/posts")
+  @RequestMapping(value = "/posts", method = RequestMethod.GET)
   public PostList list() {
     PostList postList = new PostList();
     postList.setPosts(repository.findAll());
