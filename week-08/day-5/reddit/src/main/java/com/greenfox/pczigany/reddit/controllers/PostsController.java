@@ -27,10 +27,9 @@ public class PostsController {
   }
 
   @RequestMapping(value = "/posts", method = RequestMethod.POST)
-  public PostList list(@RequestBody PostInput input) {
-    repository.save(new Post(input.getTitle(), input.getHref()));
-    PostList postList = new PostList();
-    postList.setPosts(repository.findAll());
-    return postList;
+  public Post list(@RequestBody PostInput input) {
+    Post post = new Post(input.getTitle(), input.getHref());
+    repository.save(post);
+    return post;
   }
 }
