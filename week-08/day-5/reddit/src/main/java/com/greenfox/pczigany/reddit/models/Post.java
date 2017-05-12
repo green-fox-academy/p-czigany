@@ -25,6 +25,13 @@ public class Post {
     score = 0;
   }
 
+  public Post(String title, String href) {
+    this.timestamp = new Timestamp(System.currentTimeMillis() / 1000);
+    score = 0;
+    this.title = title;
+    this.href = href;
+  }
+
   public long getId() {
     return id;
   }
