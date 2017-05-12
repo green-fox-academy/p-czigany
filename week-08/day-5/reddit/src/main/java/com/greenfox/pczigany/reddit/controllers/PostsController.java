@@ -27,7 +27,7 @@ public class PostsController {
   }
 
   @RequestMapping(value = "/posts", method = RequestMethod.POST)
-  public Post list(@RequestBody PostInput input) {
+  public Post addnew(@RequestBody PostInput input) {
     Post post = new Post(input.getTitle(), input.getHref());
     repository.save(post);
     return post;
