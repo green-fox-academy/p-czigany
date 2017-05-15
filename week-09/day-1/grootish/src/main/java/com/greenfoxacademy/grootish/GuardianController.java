@@ -1,5 +1,7 @@
 package com.greenfoxacademy.grootish;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class GuardianController {
 
   @ExceptionHandler(MissingServletRequestParameterException.class)
-  public ErrorObj missParam() {
-    return new ErrorObj();
+  public ResponseEntity<ErrorObj> missParam() {
+    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorObj());
   }
 
   @RequestMapping(value = "/groot")
