@@ -23,4 +23,9 @@ public class GuardianController {
   public IAmGroot groot(@RequestParam("message") String somemessage) {
     return new IAmGroot(somemessage);
   }
+
+  @RequestMapping(value = "/yondu")
+  public Arrow arrow(@RequestParam double distance, @RequestParam double time) {
+    return new Arrow(distance, time);
+  }
 }

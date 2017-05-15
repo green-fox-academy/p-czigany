@@ -37,7 +37,7 @@ public class GuardianControllerTest {
   }
 
   @Test
-  public void testSuccessful() throws Exception {
+  public void testGrootSuccessful() throws Exception {
     mockMvc.perform(get("/groot")
             .param("message", "some message"))
             .andExpect(status().isOk())
@@ -47,10 +47,21 @@ public class GuardianControllerTest {
   }
 
   @Test
-  public void testError() throws Exception {
+  public void testGrootError() throws Exception {
     mockMvc.perform(get("/groot"))
             .andExpect(status().isBadRequest())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(jsonPath("$.error", is("I am Groot!")));
+  }
+
+  @Test
+  public void testYonduSuccessful() throws Exception {
+    mockMvc.perform(get("/yondu")
+            .param("distance", "100.0")
+            .param("time", "10.0"))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(jsonPath("$.distance", is(100.0)))
+            .andExpect(jsonPath("$.time", is(10.0)))
+            .andExpect(jsonPath("$.speed", is(10.0)));
   }
 }
