@@ -39,8 +39,14 @@ public class GuardianController {
   }
 
   @RequestMapping(value = "/rocket/fill")
-  public Cargo rocket(@RequestParam String caliber, @RequestParam int amount) {
+  public Status rocket(@RequestParam String caliber, @RequestParam int amount) {
     cargo.fill(caliber, amount);
-    return cargo;
+    Status status = new Status();
+    status.setAmount(amount);
+    status.setReceived(caliber);
+    status.setShipstatus(String.valueOf((double)
+            (cargo.getCaliber25() + cargo.getCaliber30() + cargo.getCaliber50()) / 125) + "%");
+    status.setReady(cargo.getCaliber25() + cargo.getCaliber30() + cargo.getCaliber50() == 12500);
+    return status;
   }
 }

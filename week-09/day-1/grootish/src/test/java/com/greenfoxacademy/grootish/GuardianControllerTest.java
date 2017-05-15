@@ -72,4 +72,16 @@ public class GuardianControllerTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
             .andExpect(jsonPath("$.error", is("I am Groot!")));
   }
+
+  @Test
+  public void testEmptyShipOverall() throws Exception {
+    mockMvc.perform(get("/rocket/fill")
+            .param("caliber", ".25")
+            .param("amount", "1000"))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+            .andExpect(jsonPath("$.received", is(".25")))
+            .andExpect(jsonPath("$.amount", is(1000)))
+            .andExpect(jsonPath("$.shipstatus", is("8.016%")))
+            .andExpect(jsonPath("$.ready", is(false)));
+  }
 }
