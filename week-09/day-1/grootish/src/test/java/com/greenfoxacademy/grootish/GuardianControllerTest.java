@@ -26,10 +26,6 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @EnableWebMvc
 public class GuardianControllerTest {
 
-//  private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(),
-//          MediaType.APPLICATION_JSON.getSubtype(),
-//          Charset.forName("utf8"));
-
   private MockMvc mockMvc;
 
   @Autowired
