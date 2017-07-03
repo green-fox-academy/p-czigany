@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice", "practice\practice.csproj", "{3A9F5276-9F88-4ED1-94F9-3C6EF693077B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice1", "practice\practice1.csproj", "{3A9F5276-9F88-4ED1-94F9-3C6EF693077B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice2", "practice2\practice2.csproj", "{11671F2B-FA08-457C-8B11-C5D03A692272}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice3", "practice3\practice3.csproj", "{8A272EF8-31EE-4CE8-AE9A-65FBC7628E15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +13,17 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11671F2B-FA08-457C-8B11-C5D03A692272}.Debug|x86.ActiveCfg = Debug|x86
+		{11671F2B-FA08-457C-8B11-C5D03A692272}.Debug|x86.Build.0 = Debug|x86
+		{11671F2B-FA08-457C-8B11-C5D03A692272}.Release|x86.ActiveCfg = Release|x86
+		{11671F2B-FA08-457C-8B11-C5D03A692272}.Release|x86.Build.0 = Release|x86
 		{3A9F5276-9F88-4ED1-94F9-3C6EF693077B}.Debug|x86.ActiveCfg = Debug|x86
 		{3A9F5276-9F88-4ED1-94F9-3C6EF693077B}.Debug|x86.Build.0 = Debug|x86
 		{3A9F5276-9F88-4ED1-94F9-3C6EF693077B}.Release|x86.ActiveCfg = Release|x86
 		{3A9F5276-9F88-4ED1-94F9-3C6EF693077B}.Release|x86.Build.0 = Release|x86
+		{8A272EF8-31EE-4CE8-AE9A-65FBC7628E15}.Debug|x86.ActiveCfg = Debug|x86
+		{8A272EF8-31EE-4CE8-AE9A-65FBC7628E15}.Debug|x86.Build.0 = Debug|x86
+		{8A272EF8-31EE-4CE8-AE9A-65FBC7628E15}.Release|x86.ActiveCfg = Release|x86
+		{8A272EF8-31EE-4CE8-AE9A-65FBC7628E15}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
