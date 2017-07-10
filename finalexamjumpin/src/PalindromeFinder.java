@@ -1,10 +1,11 @@
 class PalindromeFinder {
 
   boolean isPalindrome(String examinedText) {
-
-    char[] justLetters = examinedText.replaceAll("[^a-zA-Z0-9]", "").toLowerCase().toCharArray();
-    for (int i = 0; i < justLetters.length; i++) {
-      if (justLetters[i] != justLetters[justLetters.length - 1 - i]) {
+    String withoutPunctuationOrSpaces = examinedText.replaceAll("[^a-zA-Z0-9]", "");
+    String noPunctuationLowerCase = withoutPunctuationOrSpaces.toLowerCase();
+    char[] smallCaseLetters = noPunctuationLowerCase.toCharArray();
+    for (int i = 0; i < smallCaseLetters.length; i++) {
+      if (smallCaseLetters[i] != smallCaseLetters[smallCaseLetters.length - 1 - i]) {
         return false;
       }
     }
