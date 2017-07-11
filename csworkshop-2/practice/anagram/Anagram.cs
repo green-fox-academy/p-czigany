@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace anagram
+namespace Anagram
 {
     public class Anagram
     {
         public static bool AreAnagrams(string firstOne, string secondOne)
         {
+            if (firstOne == null || secondOne == null)
+            {
+                throw new ArgumentNullException();
+            }
             List<char> lettersInFirst = MakeLetterList(firstOne);
             List<char> lettersInSecond = MakeLetterList(secondOne);
             if (lettersInFirst.Count != lettersInSecond.Count)

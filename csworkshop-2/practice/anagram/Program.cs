@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace anagram
+namespace Anagram
 {
     class MainClass
     {
