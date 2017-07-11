@@ -68,5 +68,22 @@ namespace CountLetters.Test
             Dictionary<char, int> expected = new Dictionary<char, int>();
             CountLetters.LetterCount(inputText);
         }
+
+        [Test()]
+        public void HungarianCharactersInput_Test()
+        {
+            string inputText = "dősődeŰ?$";
+            Dictionary<char, int> expected = new Dictionary<char, int>()
+            {
+                {'d', 2},
+                {'ő', 2},
+                {'s', 1},
+                {'e', 1},
+                {'Ű', 1},
+                {'?', 1},
+                {'$', 1}
+            };
+            Assert.AreEqual(expected, CountLetters.LetterCount(inputText));
+        }
     }
 }
