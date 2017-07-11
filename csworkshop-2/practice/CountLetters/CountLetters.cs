@@ -5,7 +5,7 @@ namespace CountLetters
 {
     public class CountLetters
     {
-        public Dictionary<char, int> LetterCount(string toCount)
+        public static Dictionary<char, int> LetterCount(string toCount)
         {
             if (toCount == null)
             {
@@ -20,6 +20,7 @@ namespace CountLetters
                 }
                 int currentValue;
                 characters.TryGetValue(character, out currentValue);
+                characters.Remove(character);
                 characters.Add(character, currentValue + 1);
             }
             return characters;
