@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram", "anagram\Anagram.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anagram.Test", "Anagram.Test\Anagram.Test.csproj", "{9467D611-04E0-4DD2-971F-ED9062C8026A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountLetters", "CountLetters\CountLetters.csproj", "{C15B5683-2157-4FAE-BEF8-4CFF0D20C013}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountLetters.Test", "CountLetters.Test\CountLetters.Test.csproj", "{B0A64A43-635A-4F37-B1A3-FFE8F57E24F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,5 +23,13 @@ Global
 		{9467D611-04E0-4DD2-971F-ED9062C8026A}.Debug|x86.Build.0 = Debug|x86
 		{9467D611-04E0-4DD2-971F-ED9062C8026A}.Release|x86.ActiveCfg = Release|x86
 		{9467D611-04E0-4DD2-971F-ED9062C8026A}.Release|x86.Build.0 = Release|x86
+		{B0A64A43-635A-4F37-B1A3-FFE8F57E24F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B0A64A43-635A-4F37-B1A3-FFE8F57E24F2}.Debug|x86.Build.0 = Debug|Any CPU
+		{B0A64A43-635A-4F37-B1A3-FFE8F57E24F2}.Release|x86.ActiveCfg = Release|Any CPU
+		{B0A64A43-635A-4F37-B1A3-FFE8F57E24F2}.Release|x86.Build.0 = Release|Any CPU
+		{C15B5683-2157-4FAE-BEF8-4CFF0D20C013}.Debug|x86.ActiveCfg = Debug|x86
+		{C15B5683-2157-4FAE-BEF8-4CFF0D20C013}.Debug|x86.Build.0 = Debug|x86
+		{C15B5683-2157-4FAE-BEF8-4CFF0D20C013}.Release|x86.ActiveCfg = Release|x86
+		{C15B5683-2157-4FAE-BEF8-4CFF0D20C013}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
