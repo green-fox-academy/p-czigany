@@ -6,7 +6,7 @@ namespace FivesAndThrees
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(AddBelow.addMultipliesBelow(new int[]{ 3, 5 }, 1000));
         }
     }
 }

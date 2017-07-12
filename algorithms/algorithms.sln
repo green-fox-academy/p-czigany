@@ -3,12 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FivesAndThrees", "FivesAndThrees\FivesAndThrees.csproj", "{E7522524-125D-49EE-8641-3B22811E5D9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FivesAndThrees.Test", "FivesAndThrees.Test\FivesAndThrees.Test.csproj", "{1D97F1F6-6344-4749-9346-4BD063595D5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D97F1F6-6344-4749-9346-4BD063595D5B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D97F1F6-6344-4749-9346-4BD063595D5B}.Debug|x86.Build.0 = Debug|Any CPU
+		{1D97F1F6-6344-4749-9346-4BD063595D5B}.Release|x86.ActiveCfg = Release|Any CPU
+		{1D97F1F6-6344-4749-9346-4BD063595D5B}.Release|x86.Build.0 = Release|Any CPU
 		{E7522524-125D-49EE-8641-3B22811E5D9E}.Debug|x86.ActiveCfg = Debug|x86
 		{E7522524-125D-49EE-8641-3B22811E5D9E}.Debug|x86.Build.0 = Debug|x86
 		{E7522524-125D-49EE-8641-3B22811E5D9E}.Release|x86.ActiveCfg = Release|x86
