@@ -30,6 +30,11 @@ namespace Fibonacci.Test
             Assert.AreEqual(5, Fibonacci.FibonacciTerm(4));
         }
 
+        [Test()]
+        public void EvenTermsUnderTwenty_Test()
+        {
+            Assert.AreEqual(10, Fibonacci.AddAllEvenFibonacciBelow(20));
+        }
     }
 }
 
