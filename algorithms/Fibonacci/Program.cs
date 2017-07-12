@@ -4,9 +4,11 @@ namespace Fibonacci
 {
     class MainClass
     {
+        private const int UNDER = 4000000;
+
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(Fibonacci.AddAllEvenFibonacciBelow(UNDER));
         }
     }
 }

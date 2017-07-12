@@ -4,6 +4,29 @@ namespace Fibonacci
 {
     public class Fibonacci
     {
+
+        public static int AddAllEvenFibonacciBelow(int number)
+        {
+            int sum = 0;
+            int index = 0;
+            int term = 0;
+            while (true)
+            {
+                index++;
+                term = FibonacciTerm(index);
+                if (term >= number)
+                {
+                    break;
+                }
+                if (term % 2 == 0)
+                {
+                    sum += term;
+                }
+
+            }
+            return sum;
+        }
+
         public static int FibonacciTerm(int number)
         {
             if (number == 1)
