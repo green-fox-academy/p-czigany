@@ -9,12 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountLetters", "CountLetter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountLetters.Test", "CountLetters.Test\CountLetters.Test.csproj", "{B0A64A43-635A-4F37-B1A3-FFE8F57E24F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todoapp", "Todoapp\Todoapp.csproj", "{648DCCBA-CE34-4809-84BF-5D7C52BC3600}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{648DCCBA-CE34-4809-84BF-5D7C52BC3600}.Debug|x86.ActiveCfg = Debug|x86
+		{648DCCBA-CE34-4809-84BF-5D7C52BC3600}.Debug|x86.Build.0 = Debug|x86
+		{648DCCBA-CE34-4809-84BF-5D7C52BC3600}.Release|x86.ActiveCfg = Release|x86
+		{648DCCBA-CE34-4809-84BF-5D7C52BC3600}.Release|x86.Build.0 = Release|x86
 		{743FA026-2D17-4CFA-883A-65FD78AFAABD}.Debug|x86.ActiveCfg = Debug|x86
 		{743FA026-2D17-4CFA-883A-65FD78AFAABD}.Debug|x86.Build.0 = Debug|x86
 		{743FA026-2D17-4CFA-883A-65FD78AFAABD}.Release|x86.ActiveCfg = Release|x86

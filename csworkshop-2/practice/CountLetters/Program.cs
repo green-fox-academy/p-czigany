@@ -8,8 +8,8 @@ namespace CountLetters
         public static void Main(string[] args)
         {
             Console.WriteLine("Please type in a line of text, then press the Enter key.");
-            string inputString = Console.ReadLine();
-            Dictionary<char, int> characters = CountLetters.LetterCount(inputString);
+            var inputString = Console.ReadLine();
+            var characters = CountLetters.LetterCount(inputString);
             foreach (var key in characters.Keys)
             {
                 int value;
