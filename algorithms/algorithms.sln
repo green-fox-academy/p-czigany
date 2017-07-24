@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci", "Fibonacci\Fibo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci.Test", "Fibonacci.Test\Fibonacci.Test.csproj", "{9B0685E9-68D3-4BF0-AA6D-049653E8B033}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestPrimeFactor", "LargestPrimeFactor\LargestPrimeFactor.csproj", "{D359E321-1B0E-41C1-A15E-96159D3294DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,5 +33,9 @@ Global
 		{E7522524-125D-49EE-8641-3B22811E5D9E}.Debug|x86.Build.0 = Debug|x86
 		{E7522524-125D-49EE-8641-3B22811E5D9E}.Release|x86.ActiveCfg = Release|x86
 		{E7522524-125D-49EE-8641-3B22811E5D9E}.Release|x86.Build.0 = Release|x86
+		{D359E321-1B0E-41C1-A15E-96159D3294DC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D359E321-1B0E-41C1-A15E-96159D3294DC}.Debug|x86.Build.0 = Debug|Any CPU
+		{D359E321-1B0E-41C1-A15E-96159D3294DC}.Release|x86.ActiveCfg = Release|Any CPU
+		{D359E321-1B0E-41C1-A15E-96159D3294DC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
