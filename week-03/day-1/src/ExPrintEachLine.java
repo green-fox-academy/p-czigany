@@ -14,6 +14,7 @@ public class ExPrintEachLine {
 
   public static void main(String[] args) {
     printFile("assets/my-file.txt");
+    printFile("assets/not-my-file.txt");
   }
 
   private static void printFile(String stringPath) {
