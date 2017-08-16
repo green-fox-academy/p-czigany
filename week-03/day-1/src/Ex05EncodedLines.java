@@ -17,22 +17,22 @@ public class Ex05EncodedLines {
     decodeToFile();
   }
 
-  public static void decodeToFile() {
+  private static void decodeToFile() {
     List<String> linesFrom = readFromFile(Paths.get("assets/encoded-lines.txt"));
     List<String> linesTo = decode(linesFrom);
     printToFile(Paths.get("assets/decoded-lines.txt"), linesTo);
   }
 
-  public static List<String> readFromFile(Path fileLocation) {
+  private static List<String> readFromFile(Path fileLocation) {
     try {
       return readAllLines(fileLocation);
     } catch (IOException ex) {
       System.out.println("I/O Exception occurred while trying to read from file.");
-      return null;
+      return new ArrayList<>();
     }
   }
 
-  public static List<String> decode(List<String> toSingle) {
+  private static List<String> decode(List<String> toSingle) {
     List<String> singledLines = new ArrayList<>();
     for (String line :
             toSingle) {
@@ -48,7 +48,7 @@ public class Ex05EncodedLines {
     return singledLines;
   }
 
-  public static void printToFile(Path filePath, List<String> toPrint) {
+  private static void printToFile(Path filePath, List<String> toPrint) {
     try {
       Files.write(filePath, toPrint, Charset.forName("UTF-8"));
     } catch (IOException ex) {

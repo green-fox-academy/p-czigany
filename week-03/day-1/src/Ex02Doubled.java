@@ -17,35 +17,34 @@ public class Ex02Doubled {
     doubleRemoveToFile();
   }
 
-  public static void doubleRemoveToFile() {
+  private static void doubleRemoveToFile() {
     List<String> linesFrom = readFromFile(Paths.get("assets/duplicated-chars.txt"));
     List<String> linesTo = doubleRemove(linesFrom);
     printToFile(Paths.get("assets/single-chars.txt"), linesTo);
   }
 
-  public static List<String> readFromFile(Path fileLocation) {
+  private static List<String> readFromFile(Path fileLocation) {
     try {
       return readAllLines(fileLocation);
     } catch (IOException ex) {
       System.out.println("I/O Exception occurred while trying to read from file.");
-      return null;
+      return new ArrayList<>();
     }
   }
 
-  public static List<String> doubleRemove(List<String> toSingle) {
+  private static List<String> doubleRemove(List<String> toSingle) {
     List<String> singledLines = new ArrayList<>();
-    for (String line :
-            toSingle) {
-      String oneLineTo = "";
+    for (String line : toSingle) {
+      StringBuilder oneLineTo = new StringBuilder();
       for (int i = 0; i < line.length(); i += 2) {
-        oneLineTo += line.charAt(i);
+        oneLineTo.append(line.charAt(i));
       }
-      singledLines.add(oneLineTo);
+      singledLines.add(oneLineTo.toString());
     }
     return singledLines;
   }
 
-  public static void printToFile(Path filePath, List<String> toPrint) {
+  private static void printToFile(Path filePath, List<String> toPrint) {
     try {
       Files.write(filePath, toPrint, Charset.forName("UTF-8"));
     } catch (IOException ex) {
