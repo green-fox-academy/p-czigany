@@ -9,6 +9,8 @@ public class ExDivideByZero {
   // it should print "fail" if the parameter is 0
 
   public static void main(String[] args) {
+    divideTenBy(2);
+    divideTenBy(7);
     divideTenBy(0);
   }
 
