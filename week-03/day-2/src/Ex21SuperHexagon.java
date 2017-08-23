@@ -32,8 +32,8 @@ public class Ex21SuperHexagon {
 
     smallHexagon(side, xOffset, yOffset, g);
 
-    int xStart = xOffset;
-    int yStart = yOffset;
+    double xStart = xOffset;
+    double yStart = yOffset;
 
     for (int radius = 1; radius < size; radius++) {
       for (int i = 0; i < 7; i++) {
