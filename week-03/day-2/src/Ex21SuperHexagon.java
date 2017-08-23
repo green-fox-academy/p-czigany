@@ -9,7 +9,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  */
 public class Ex21SuperHexagon {
 
-  private static final double HEIGHT_FACTOR = 0.866025;
+  private static final double HEIGHT_FACTOR = Math.sqrt(3) / 2;
 
   public static void mainDraw(Graphics graphics) {
     double side = 30;
@@ -46,34 +46,12 @@ public class Ex21SuperHexagon {
         smallHexagon(side, xStart, yStart, g);
       }
 
-      for (int i = 0; i < radius; i++) {
-        xStart += vectors[2][0];
-        yStart += vectors[2][1];
-        smallHexagon(side, xStart, yStart, g);
-      }
-
-      for (int i = 0; i < radius; i++) {
-        xStart += vectors[3][0];
-        yStart += vectors[3][1];
-        smallHexagon(side, xStart, yStart, g);
-      }
-
-      for (int i = 0; i < radius; i++) {
-        xStart += vectors[4][0];
-        yStart += vectors[4][1];
-        smallHexagon(side, xStart, yStart, g);
-      }
-
-      for (int i = 0; i < radius; i++) {
-        xStart += vectors[5][0];
-        yStart += vectors[5][1];
-        smallHexagon(side, xStart, yStart, g);
-      }
-
-      for (int i = 0; i < radius; i++) {
-        xStart += vectors[0][0];
-        yStart += vectors[0][1];
-        smallHexagon(side, xStart, yStart, g);
+      for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < radius; j++) {
+          xStart += vectors[(i + 2) % 6][0];
+          yStart += vectors[(i + 2) % 6][1];
+          smallHexagon(side, xStart, yStart, g);
+        }
       }
     }
   }
