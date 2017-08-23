@@ -14,12 +14,12 @@ public class Ex21SuperHexagon {
   public static void mainDraw(Graphics graphics) {
     double side = 30;
     int x1 = 120;
-    int y1 = 150;
+    int y1 = 200;
 
-    biggerHexagon(side, x1, y1, graphics);
+    biggerHexagon(3, side, x1, y1, graphics);
   }
 
-  private static void biggerHexagon(double side, int xOffset, int yOffset, Graphics g) {
+  private static void biggerHexagon(int size, double side, int xOffset, int yOffset, Graphics g) {
 
     double[][] vectors = {
         {(-1) * 1.5 * side, (-1) * HEIGHT_FACTOR * side},
@@ -31,8 +31,50 @@ public class Ex21SuperHexagon {
     };
 
     smallHexagon(side, xOffset, yOffset, g);
-    for (int i = 0; i < 6; i++) {
-      smallHexagon(side, xOffset + (int) vectors[i][0], yOffset + (int) vectors[i][1], g);
+
+    int xStart = xOffset;
+    int yStart = yOffset;
+
+    for (int radius = 1; radius < size; radius++) {
+      xStart += vectors[0][0];
+      yStart += vectors[0][1];
+      smallHexagon(side, xStart, yStart, g);
+
+      for (int i = 0; i < radius - 1; i++) {
+        xStart += vectors[1][0];
+        yStart += vectors[1][1];
+        smallHexagon(side, xStart, yStart, g);
+      }
+
+      for (int i = 0; i < radius; i++) {
+        xStart += vectors[2][0];
+        yStart += vectors[2][1];
+        smallHexagon(side, xStart, yStart, g);
+      }
+
+      for (int i = 0; i < radius; i++) {
+        xStart += vectors[3][0];
+        yStart += vectors[3][1];
+        smallHexagon(side, xStart, yStart, g);
+      }
+
+      for (int i = 0; i < radius; i++) {
+        xStart += vectors[4][0];
+        yStart += vectors[4][1];
+        smallHexagon(side, xStart, yStart, g);
+      }
+
+      for (int i = 0; i < radius; i++) {
+        xStart += vectors[5][0];
+        yStart += vectors[5][1];
+        smallHexagon(side, xStart, yStart, g);
+      }
+
+      for (int i = 0; i < radius; i++) {
+        xStart += vectors[0][0];
+        yStart += vectors[0][1];
+        smallHexagon(side, xStart, yStart, g);
+      }
     }
   }
 
@@ -47,7 +89,7 @@ public class Ex21SuperHexagon {
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
-    jFrame.setSize(new Dimension(300, 300));
+    jFrame.setSize(new Dimension(500, 500));
     jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
     jFrame.add(new ImagePanel());
     jFrame.setLocationRelativeTo(null);
