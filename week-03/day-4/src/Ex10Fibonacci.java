@@ -7,7 +7,7 @@ public class Ex10Fibonacci {
     System.out.println(fibonacci(6));
   }
 
-  public static int fibonacci(int nth) {
+  private static int fibonacci(int nth) {
     if (nth == 1) {
       return 0;
     } else if (nth == 2) {

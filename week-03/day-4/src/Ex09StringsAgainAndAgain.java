@@ -8,7 +8,7 @@ public class Ex09StringsAgainAndAgain {
     System.out.println(xsRemove(input));
   }
 
-  public static String xsRemove(String toTransform) {
+  private static String xsRemove(String toTransform) {
     if (toTransform.length() < 2) {
       return toTransform;
     } else {

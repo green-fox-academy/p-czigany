@@ -8,7 +8,7 @@ public class Ex08StringsAgain {
     System.out.println(xsRemove(input));
   }
 
-  public static String xsRemove(String toTransform) {
+  private static String xsRemove(String toTransform) {
     if (toTransform.length() < 1) {
       return "";
     } else {

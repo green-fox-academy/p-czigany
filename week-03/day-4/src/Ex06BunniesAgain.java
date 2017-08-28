@@ -7,7 +7,8 @@ public class Ex06BunniesAgain {
     System.out.println(oddBunnyEarCounter(5));
   }
 
-  public static int oddBunnyEarCounter(int bunnies) {
+  private static int oddBunnyEarCounter(int numberOfBunnies) {
+    int bunnies = numberOfBunnies;
     if (bunnies < 1) {
       return 0;
     } else {
