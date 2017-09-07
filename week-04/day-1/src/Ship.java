@@ -44,7 +44,7 @@ class Ship {
     }
     return lives;
   }
-  
+
   boolean battle(Ship enemyShip) {
     int aliveAttackerPirates = countLivingCrew();
     int aliveEnemyPirates = enemyShip.countLivingCrew();
@@ -62,11 +62,13 @@ class Ship {
     int foughtInBattle = countLivingCrew();
     int deaths = new Random().nextInt(foughtInBattle) + 1;
     int i = 0;
+    int j = 0;
     while (i < deaths) {
-      if (crew.get(i).isAlive()) {
-        crew.get(i).die();
+      if (crew.get(j).isAlive()) {
+        crew.get(j).die();
         i++;
       }
+      j++;
     }
   }
 
@@ -81,10 +83,12 @@ class Ship {
     boolean givenOut = false;
     Random rnd = new Random();
     while (!givenOut) {
-      int randomPirateIndex = rnd.nextInt(countLivingCrew() + 1) + 1;
-      if (randomPirateIndex == 0 && captain.isAlive() && captain.isConscious()) {
-        captain.drinkSomeRum();
-        givenOut = true;
+      int randomPirateIndex = rnd.nextInt(countLivingCrew() + 1);
+      if (randomPirateIndex == 0) {
+        if (captain.isAlive() && captain.isConscious()) {
+          captain.drinkSomeRum();
+          givenOut = true;
+        }
       } else {
         Pirate rumTarget = crew.get(randomPirateIndex - 1);
         if (rumTarget.isAlive() && rumTarget.isConscious()) {
