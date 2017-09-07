@@ -14,6 +14,18 @@ public class Pirate {
     alive = true;
   }
 
+  public int getIntoxication() {
+    return intoxication;
+  }
+
+  public boolean isConscious() {
+    return conscious;
+  }
+
+  public boolean isAlive() {
+    return alive;
+  }
+
   public void drinkSomeRum() {
     if (!alive) {
       System.out.println(DEAD);
