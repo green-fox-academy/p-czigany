@@ -1,10 +1,7 @@
-/**
- * Created by peter on 2017.04.03..
- */
-public class Animal {
+class Animal {
 
   int hunger;
-  int thirst;
+  private int thirst;
 
   Animal() {
     hunger = 50;

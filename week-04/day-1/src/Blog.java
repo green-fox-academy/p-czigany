@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by peter on 2017.04.03..
- */
 public class Blog {
 
   //  Create a Blog class
@@ -12,7 +9,7 @@ public class Blog {
   //  delete(int) one item at given index
   //  update(int, BlogPost) one item at the given index and update it with another BlogPost
 
-  List<BlogPost> postsList;
+  private List<BlogPost> postsList;
 
   public Blog() {
     postsList = new ArrayList<>();

@@ -1,10 +1,8 @@
-/**
- * Created by peter on 2017.04.03..
- */
 public class Pirate {
-  int intoxication;
-  boolean conscious;
-  boolean alive;
+
+  private int intoxication;
+  private boolean conscious;
+  private boolean alive;
 
   public Pirate() {
     intoxication = 0;
@@ -15,7 +13,4 @@ public class Pirate {
   public void drinkSomeRum() {
     intoxication++;
   }
-
-
-
 }

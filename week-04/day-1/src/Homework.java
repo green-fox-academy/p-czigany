@@ -3,9 +3,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by peter on 2017.03.23..
- */
 public class Homework {
 
   public static void main(String... args) {

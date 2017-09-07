@@ -1,10 +1,7 @@
-/**
- * Created by peter on 2017.04.03..
- */
 public class Person {
 
-  String name;
-  String eyeColor;
+  private String name;
+  private String eyeColor;
   float children;
 
   void putInLenses(String color) {
@@ -15,8 +12,7 @@ public class Person {
     this.name = name;
   }
 
-// Constructor:
+  // Constructor:
   public Person(String name) {
-
   }
 }

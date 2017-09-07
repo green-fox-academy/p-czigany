@@ -1,15 +1,12 @@
-/**
- * Created by peter on 2017.04.03..
- */
 public class Thing {
   private String name;
   private boolean completed;
 
-  public Thing(String name) {
+  Thing(String name) {
     this.name = name;
   }
 
-  public void complete() {
+  void complete() {
     this.completed = true;
   }
 

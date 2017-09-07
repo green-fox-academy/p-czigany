@@ -1,12 +1,9 @@
-/**
- * Created by peter on 2017.04.03..
- */
 public class Student {
 
-//  learn()
-//  question(teacher) -> calls the teachers answer method
-  public void learn() {
-
+  //  learn()
+  //  question(teacher) -> calls the teachers answer method
+  void learn() {
+    System.out.println("*This student is learning.*");
   }
 
   public void question(Teacher fromWho) {

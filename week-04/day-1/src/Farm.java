@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by peter on 2017.04.03..
- */
 public class Farm {
 
   //  Create a Farm class
@@ -11,8 +8,8 @@ public class Farm {
   //  it has slots which defines the number of free places for animals
   //  breed() -> creates a new animal if there's place for it
   //  slaughter() -> removes the least hungry animal
-  List<Animal> farmAnimals;
-  int maxNOfAnimals;
+  private List<Animal> farmAnimals;
+  private int maxNOfAnimals;
 
   void breed() {
     if (farmAnimals.size() < maxNOfAnimals) {

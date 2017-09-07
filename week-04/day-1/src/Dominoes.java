@@ -1,10 +1,6 @@
 import java.util.ArrayList;
-
 import java.util.List;
 
-/**
- * Created by peter on 2017.04.03..
- */
 public class Dominoes {
 
   public static void main(String[] args) {
@@ -16,7 +12,7 @@ public class Dominoes {
     System.out.println(dominoes);
   }
 
-  dominoSnake(List<Domino> toArrange) {
+  private static void dominoSnake(List<Domino> toArrange) {
     for (int i = 0; i < toArrange.size(); i++) {
       for (int j = i + 2; j < toArrange.size(); j++) {
         if (toArrange.get(j).getValues()[0] == toArrange.get(i).getValues()[1]) {
@@ -28,7 +24,7 @@ public class Dominoes {
     }
   }
 
-  static List<Domino> initializeDominoes() {
+  private static List<Domino> initializeDominoes() {
     List<Domino> dominoes = new ArrayList<>();
     dominoes.add(new Domino(5, 2));
     dominoes.add(new Domino(4, 6));

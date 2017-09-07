@@ -1,7 +1,4 @@
-/**
- * Created by peter on 2017.04.03..
- */
-public class Counter {
+class Counter {
 
   //  Create Counter class
   //  which has an integer field value
@@ -14,8 +11,8 @@ public class Counter {
   //  Download CounterTest.java and place it next to your solution
   //  If something's red in it, ALT+Enter Add JUnit5 to classpath (5 aka JUnit FIVE not 4 or 3)
   //  Then run the tests with the green play button before the lines (run all of them before the classname)
-  int initialValue;
-  int currentValue;
+  private int initialValue;
+  private int currentValue;
 
   Counter() {
     initialValue = 0;

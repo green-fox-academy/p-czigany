@@ -1,8 +1,3 @@
-import java.util.Arrays;
-
-/**
- * Created by peter on 2017.04.03..
- */
 public class Domino {
   private final int[] values;
 

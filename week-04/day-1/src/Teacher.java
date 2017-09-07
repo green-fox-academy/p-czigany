@@ -1,14 +1,11 @@
-/**
- * Created by peter on 2017.04.03..
- */
 public class Teacher {
 
-//  teach(student) -> calls the students learn method
-//  answer()
+  //  teach(student) -> calls the students learn method
+  //  answer()
   public void teach(Student whom) {
     whom.learn();
   }
-  public void answer() {
-
+  void answer() {
+    System.out.println("Now, that's a stupid question.");
   }
 }

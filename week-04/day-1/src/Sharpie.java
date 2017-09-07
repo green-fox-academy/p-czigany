@@ -1,7 +1,4 @@
-/**
- * Created by peter on 2017.04.03..
- */
-public class Sharpie {
+class Sharpie {
 //  Create Sharpie class
 //  We should know about each sharpie their color (which should be a string), width (which will be a floating point number), inkAmount (another floating point number)
 //  When creating one, we need to specify the color and the width
@@ -9,7 +6,7 @@ public class Sharpie {
 //  We can use() the sharpie objects
 //  which decreases inkAmount
   String color;
-  float width;
+  private float width;
   float inkAmount;
 
   Sharpie (String color, float width) {
@@ -22,7 +19,7 @@ public class Sharpie {
     inkAmount--;
   }
 
-  public boolean isUsable() {
+  boolean isUsable() {
     return (inkAmount > 0);
   }
 }

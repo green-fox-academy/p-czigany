@@ -1,12 +1,9 @@
-/**
- * Created by peter on 2017.04.03..
- */
 public class BlogPost {
 
-  String authorName;
-  String title;
-  String text;
-  String publicationDate;
+  private String authorName;
+  private String title;
+  private String text;
+  private String publicationDate;
 
   public BlogPost(String authorName, String title, String publicationDate) {
     this.authorName = authorName;

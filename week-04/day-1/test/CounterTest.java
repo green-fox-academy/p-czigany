@@ -1,9 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-/**
- * Created by peter on 2017.04.03..
- */
 class CounterTest {
 
   private Counter c = new Counter();

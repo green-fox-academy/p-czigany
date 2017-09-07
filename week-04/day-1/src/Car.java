@@ -1,10 +1,7 @@
-/**
- * Created by peter on 2017.04.03..
- */
-public class Car {
+class Car {
 
   int gasAmount;
-  int capacity;
+  private int capacity;
 
   Car() {
     gasAmount = 0;

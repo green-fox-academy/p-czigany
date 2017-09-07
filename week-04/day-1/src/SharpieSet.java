@@ -1,14 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by peter on 2017.04.03..
- */
 public class SharpieSet {
 
   List<Sharpie> listOfSharpies;
 
-  public SharpieSet() {
+  SharpieSet() {
     listOfSharpies = new ArrayList<>();
   }
 
