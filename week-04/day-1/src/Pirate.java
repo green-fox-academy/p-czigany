@@ -47,10 +47,8 @@ public class Pirate {
     }
   }
 
-  private void die() {
-    if (alive) {
-      alive = false;
-    }
+  void die() {
+    alive = false;
   }
 
   void brawl(Pirate target) {
@@ -60,7 +58,7 @@ public class Pirate {
     if (!target.alive) {
       System.out.println("Target is already dead.");
     } else if (!target.conscious) {
-      target.die();
+      target.alive = false;
     } else {
       fistfight(this, target);
     }
