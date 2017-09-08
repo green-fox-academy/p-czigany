@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class CowsAndBulls {
 
   /*
@@ -19,4 +21,19 @@ class CowsAndBulls {
   private String number;
   private GameState gameState;
   private int guesses;
+
+  CowsAndBulls() {
+    this.number = randomizeFourDigits();
+    this.gameState = GameState.PLAYING;
+    this.guesses = 0;
+  }
+
+  String randomizeFourDigits() {
+    StringBuilder random4Digits = new StringBuilder();
+    Random rnd = new Random();
+    for (int i = 0; i < 4; i++) {
+      random4Digits.append(rnd.nextInt(10));
+    }
+    return random4Digits.toString();
+  }
 }
