@@ -4,12 +4,9 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Created by peter on 2017.04.05..
- */
 class ExtensionTest {
 
-  Extension extension = new Extension();
+  private Extension extension = new Extension();
 
   @Test
   void testAdd_2and3is5() {
@@ -73,16 +70,19 @@ class ExtensionTest {
 
   @Test
   void testTranslate_bemutatkozik() {
-    assertEquals("bevemuvutavatkovozivik", extension.translate("bemutatkozik"));
+    assertEquals("bevemuvutavatkovozivik",
+        extension.translate("bemutatkozik"));
   }
 
   @Test
   void testTranslate_kolbice() {
-    assertEquals("lavagovopuvus", extension.translate("lagopus"));
+    assertEquals("lavagovopuvus",
+        extension.translate("lagopus"));
   }
 
   @Test
   void testTranslate_kreacionizmus() {
-    assertEquals("ávágytávál", extension.translate("ágytál"));
+    assertEquals("ávágytávál",
+        extension.translate("ágytál"));
   }
 }

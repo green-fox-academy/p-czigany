@@ -2,9 +2,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Created by peter on 2017.04.04..
- */
 class PetRockTest {
 
   private PetRock rocky = new PetRock("Rocky");
@@ -20,7 +17,7 @@ class PetRockTest {
   }
 
   @Test
-  public void testHappyAfterPlay() throws Exception {
+  void testHappyAfterPlay() throws Exception {
     rocky.playWithRock();
     assertTrue(rocky.isHappy());
   }

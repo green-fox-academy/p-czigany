@@ -1,11 +1,8 @@
-/**
- * Created by peter on 2017.04.05..
- */
-public class Sharpie {
+class Sharpie {
 
-  String color;
-  float width;
-  float inkAmount;
+  private String color;
+  private float width;
+  private float inkAmount;
 
   Sharpie(String color, float width) {
     this.color = color;
@@ -17,7 +14,7 @@ public class Sharpie {
     inkAmount--;
   }
 
-  public boolean isUsable() {
+  boolean isUsable() {
     return (inkAmount > 0);
   }
 }

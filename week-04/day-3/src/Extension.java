@@ -1,10 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by peter on 2017.04.05..
- */
-public class Extension {
+class Extension {
 
   int add(int a, int b) {
     return a + b;
@@ -27,15 +24,16 @@ public class Extension {
   }
 
   double median(List<Integer> pool) {
-    pool = bubbleSortList(pool);
-    if (pool.size() % 2 != 0) {
-      return pool.get((pool.size() - 1) / 2);
+    List<Integer> sortedPool = bubbleSortList(pool);
+    if (sortedPool.size() % 2 != 0) {
+      return sortedPool.get((sortedPool.size() - 1) / 2);
     } else {
-      return ((double) pool.get(pool.size() / 2) + (double) pool.get((pool.size() - 2) / 2)) / 2;
+      return ((double) sortedPool.get(sortedPool.size() / 2)
+          + (double) sortedPool.get((sortedPool.size() - 2) / 2)) / 2;
     }
   }
 
-  List<Integer> bubbleSortList(List<Integer> toSort) {
+  private List<Integer> bubbleSortList(List<Integer> toSort) {
     boolean flag = true;
     int swap;
     while (flag) {
@@ -58,16 +56,20 @@ public class Extension {
   }
 
   String translate(String hungarian) {
-    String teve = hungarian;
+    StringBuilder teve = new StringBuilder();
+    teve.append(hungarian);
     int length = teve.length();
-    for (int i = 0; i < length; i++) {
+    int i = 0;
+    while(i < length) {
       char c = teve.charAt(i);
       if (isVowel(c)) {
-        teve = teve.substring(0, i + 1) + "v" + teve.substring(i);
-        i += 2;
+        teve.insert(i, c).insert(i + 1, "v");
+        i += 3;
         length += 2;
+      } else {
+        i++;
       }
     }
-    return teve;
+    return teve.toString();
   }
 }

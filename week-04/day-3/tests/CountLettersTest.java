@@ -3,9 +3,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.HashMap;
 import org.junit.jupiter.api.Test;
 
-/**
- * Created by peter on 2017.04.05..
- */
 class CountLettersTest {
 
   @Test

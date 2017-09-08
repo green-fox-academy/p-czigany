@@ -1,7 +1,4 @@
-/**
- * Created by peter on 2017.04.05..
- */
-public class Fibonacci {
+class Fibonacci {
 
   int fibonacci(int nth) {
     if (nth == 1) {
