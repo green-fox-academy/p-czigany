@@ -1,8 +1,7 @@
+package homework;
+
 import java.util.ArrayList;
 
-/**
- * Created by peter on 2017.04.04..
- */
 public class Homework {
 
   public static void main(String[] args) {
@@ -21,7 +20,9 @@ public class Homework {
     Mentor mentor = new Mentor();
     people.add(mentor);
     Sponsor sponsor = new Sponsor();
+    people.add(sponsor);
     Sponsor elon = new Sponsor("Elon Musk", 46, "male", "SpaceX");
+    people.add(elon);
 
     student.skipDays(3);
 
