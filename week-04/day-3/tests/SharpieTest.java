@@ -12,4 +12,13 @@ class SharpieTest {
     }
     assertFalse(mySharpestSharpie.isUsable());
   }
+
+  @Test
+  void inkTestWorking() {
+    Sharpie mySharpestSharpie = new Sharpie("yellow", 2.0f);
+    for (int i = 0; i < 99; i++) {
+      mySharpestSharpie.use();
+    }
+    assertTrue(mySharpestSharpie.isUsable());
+  }
 }
