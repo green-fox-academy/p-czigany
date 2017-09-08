@@ -3,13 +3,11 @@ package aircraftcarrier;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by peter on 2017.04.04..
- */
-public class Carrier {
+class Carrier {
 
-  List<Aircraft> carriedPlanes;
-  int ammoStored, healthPoints;
+  private List<Aircraft> carriedPlanes;
+  private int ammoStored;
+  private int healthPoints;
 
   Carrier(int initialAmmo) {
     this.carriedPlanes = new ArrayList<>();
@@ -41,7 +39,7 @@ public class Carrier {
     }
   }
 
-  boolean ammoIsEnough() {
+  private boolean ammoIsEnough() {
     int totalAmmoNeeded = 0;
     for (Aircraft toFill :
             carriedPlanes) {
@@ -50,7 +48,7 @@ public class Carrier {
     return (getAmmoStored() >= totalAmmoNeeded);
   }
 
-  List<Aircraft> pickPlanes(Class classToPick) {
+  private List<Aircraft> pickPlanes(Class classToPick) {
     List<Aircraft> pickedPlanes = new ArrayList<>();
     for (Aircraft examined :
             carriedPlanes) {
@@ -61,7 +59,7 @@ public class Carrier {
     return pickedPlanes;
   }
 
-  void reloadPlanes(List<Aircraft> planesToReload) {
+  private void reloadPlanes(List<Aircraft> planesToReload) {
     for (Aircraft toFill :
             planesToReload) {
       setAmmoStored(toFill.refill(getAmmoStored()));
@@ -77,7 +75,7 @@ public class Carrier {
     targetCarrier.setHealthPoints(targetCarrier.getHealthPoints() - damageTotal);
   }
 
-  int totalDamage() {
+  private int totalDamage() {
     int sumDamage = 0;
     for (Aircraft plane :
             carriedPlanes) {
@@ -90,30 +88,40 @@ public class Carrier {
     if (healthPoints <= 0) {
       return "It's dead Jim :(";
     } else {
-      String status =
-              "Aircraft count: " + carriedPlanes.size() + ", Ammo Storage: " + getAmmoStored()
-                      + ", Total damage: " + totalDamage() + "\n" + "Aircrafts:\n";
+      StringBuilder status = new StringBuilder();
+      status
+          .append("Aircraft count: ")
+          .append(carriedPlanes.size())
+          .append(", Ammo Storage: ")
+          .append(getAmmoStored())
+          .append(", Total damage: ")
+          .append(totalDamage())
+          .append("\n")
+          .append("Aircrafts:\n");
+
       for (Aircraft plane :
               carriedPlanes) {
-        status += plane.getStatus() + "\n";
+        status
+            .append(plane.getStatus())
+            .append("\n");
       }
-      return status;
+      return status.toString();
     }
   }
 
-  public int getAmmoStored() {
+  private int getAmmoStored() {
     return ammoStored;
   }
 
-  public int getHealthPoints() {
+  int getHealthPoints() {
     return healthPoints;
   }
 
-  public void setAmmoStored(int ammoStored) {
+  private void setAmmoStored(int ammoStored) {
     this.ammoStored = ammoStored;
   }
 
-  public void setHealthPoints(int healthPoints) {
+  private void setHealthPoints(int healthPoints) {
     this.healthPoints = healthPoints;
   }
 }

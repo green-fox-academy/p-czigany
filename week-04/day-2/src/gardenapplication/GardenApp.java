@@ -1,8 +1,5 @@
 package gardenapplication;
 
-/**
- * Created by peter on 2017.04.04..
- */
 public class GardenApp {
 
   public static void main(String[] args) {

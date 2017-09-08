@@ -1,23 +1,22 @@
 package greenfoxorganization;
 
-/**
- * Created by peter on 2017.04.04..
- */
-public class Student extends Person {
+class Student extends Person {
 
-  String previousOrganization;
-  int skippedDays;
+  private String previousOrganization;
+  private int skippedDays;
 
   void skipDays(int numberOfDays) {
     skippedDays += numberOfDays;
   }
 
+  @Override
   void introduce() {
     System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " from "
             + previousOrganization + " who skipped " + skippedDays
             + " days from the course already.");
   }
 
+  @Override
   void getGoal() {
     System.out.println("Be a junior software developer.");
   }

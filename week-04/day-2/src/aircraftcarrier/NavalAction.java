@@ -1,8 +1,5 @@
 package aircraftcarrier;
 
-/**
- * Created by peter on 2017.04.04..
- */
 public class NavalAction {
 
   public static void main(String[] args) {

@@ -1,17 +1,16 @@
 package greenfoxorganization;
 
-/**
- * Created by peter on 2017.04.04..
- */
-public class Mentor extends Person {
+class Mentor extends Person {
 
-  String level;
+  private String level;
 
+  @Override
   void introduce() {
     System.out.println(
             "Hi, I'm " + name + ", a " + age + " year old " + gender + " " + level + " mentor.");
   }
 
+  @Override
   void getGoal() {
     System.out.println("Educate brilliant junior software developers.");
   }

@@ -3,14 +3,11 @@ package greenfoxorganization;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by peter on 2017.04.04..
- */
 public class LagopusClass {
 
-  String className;
-  List<Student> students;
-  List<Mentor> mentors;
+  private String className;
+  private List<Student> students;
+  private List<Mentor> mentors;
 
   void addStudent(Student toAdd) {
     students.add(toAdd);

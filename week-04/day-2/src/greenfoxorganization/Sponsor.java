@@ -1,23 +1,22 @@
 package greenfoxorganization;
 
-/**
- * Created by peter on 2017.04.04..
- */
 public class Sponsor extends Person {
 
-  String company;
-  int hiredStudents;
+  private String company;
+  private int hiredStudents;
 
   void hire() {
     hiredStudents++;
   }
 
+  @Override
   void introduce() {
     System.out.println(
             "Hi, I'm " + name + ", a " + age + " year old " + gender + " who represents " + company
                     + " and hired " + hiredStudents + " students so far.");
   }
 
+  @Override
   void getGoal() {
     System.out.println("Hire brilliant junior software developers.");
   }

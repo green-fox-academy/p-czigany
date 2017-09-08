@@ -1,17 +1,15 @@
 package gardenapplication;
 
-/**
- * Created by peter on 2017.04.04..
- */
-public class Plant {
+class Plant {
 
   private String color;
-  private double waterHeld, absorbRatio;
+  private double waterHeld;
+  private double absorbRatio;
   private int wateredIf;
 
   // Constructors:
 
-  public Plant(String color, int wateredIf, double absorbRatio) {
+  Plant(String color, int wateredIf, double absorbRatio) {
     this.waterHeld = 0;
     this.color = color;
     this.wateredIf = wateredIf;
@@ -20,19 +18,19 @@ public class Plant {
 
   // Getters:
 
-  public String getColor() {
+  String getColor() {
     return color;
   }
 
-  public double getWaterHeld() {
+  double getWaterHeld() {
     return waterHeld;
   }
 
-  public int getWateredIf() {
+  private int getWateredIf() {
     return wateredIf;
   }
 
-  public double getAbsorbRatio() {
+  double getAbsorbRatio() {
     return absorbRatio;
   }
 
@@ -42,7 +40,7 @@ public class Plant {
 
   // Setters:
 
-  public void setWaterHeld(double waterHeld) {
+  void setWaterHeld(double waterHeld) {
     this.waterHeld = waterHeld;
   }
 }

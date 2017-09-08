@@ -1,11 +1,10 @@
 package aircraftcarrier;
 
-/**
- * Created by peter on 2017.04.04..
- */
 public class Aircraft {
 
-  private int maxAmmo, currentAmmo, baseDamage;
+  private int maxAmmo;
+  private int currentAmmo;
+  private int baseDamage;
 
   Aircraft(int maxAmmo, int baseDamage) {
     this.maxAmmo = maxAmmo;
@@ -20,18 +19,19 @@ public class Aircraft {
   }
 
   int refill(int toLoad) {
+    int ammoToLoad = toLoad;
     while (toLoad != 0 && currentAmmo != maxAmmo) {
       this.currentAmmo++;
-      toLoad--;
+      ammoToLoad--;
     }
-    return toLoad;
+    return ammoToLoad;
   }
 
   int totalDamage() {
     return currentAmmo * baseDamage;
   }
 
-  String getType() {
+  private String getType() {
     return this.getClass().getName().substring(this.getClass().getName().indexOf(".") + 1);
   }
 
@@ -39,15 +39,15 @@ public class Aircraft {
     return "Type " + getType() + ", Ammo: " + getCurrentAmmo() + ", Base Damage: " + getBaseDamage() + ", All Damage: " + totalDamage();
   }
 
-  public int getMaxAmmo() {
+  int getMaxAmmo() {
     return maxAmmo;
   }
 
-  public int getCurrentAmmo() {
+  int getCurrentAmmo() {
     return currentAmmo;
   }
 
-  public int getBaseDamage() {
+  int getBaseDamage() {
     return baseDamage;
   }
 
