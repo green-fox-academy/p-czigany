@@ -14,10 +14,6 @@ class CowsAndBulls {
     All methods, including constructor should be tested
    */
 
-  private enum GameState {
-    PLAYING, FINISHED
-  }
-
   private String number;
   private GameState gameState;
   private int guesses;
@@ -26,6 +22,18 @@ class CowsAndBulls {
     this.number = randomizeFourDigits();
     this.gameState = GameState.PLAYING;
     this.guesses = 0;
+  }
+
+  String getNumber() {
+    return number;
+  }
+
+  GameState getGameState() {
+    return gameState;
+  }
+
+  int getGuesses() {
+    return guesses;
   }
 
   String randomizeFourDigits() {
