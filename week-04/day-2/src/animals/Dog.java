@@ -1,7 +1,7 @@
-/**
- * Created by peter on 2017.04.04..
- */
+package animals;
+
 public class Dog {
+
   String name;
 
   public Dog(String name) {
@@ -9,7 +9,7 @@ public class Dog {
     System.out.println("A dog has been created.");
   }
 
-  public Dog() {
+  Dog() {
     this.name = "dog";
     System.out.println("A dog has been created.");
   }

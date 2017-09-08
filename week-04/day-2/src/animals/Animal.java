@@ -1,10 +1,9 @@
-/**
- * Created by peter on 2017.04.04..
- */
+package animals;
+
 public class Animal {
 
-  private String name = "Animal";
-  public String favFood = "Food";
+  private String name = "animals.Animal";
+  private String favFood = "Food";
 
   protected final void changeName(String newName) {
     this.name = newName;
@@ -23,11 +22,11 @@ public class Animal {
 
   }
 
-  public Animal() {
+  Animal() {
 
   }
 
-  public Animal(String name, String favFood) {
+  Animal(String name, String favFood) {
     this.name = name;
     this.favFood = favFood;
   }

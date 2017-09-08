@@ -1,14 +1,14 @@
-/**
- * Created by peter on 2017.04.04..
- */
+package animals;
+
 public class Cat extends Animal {
 
-  public String favToy = "Yarn";
+  private String favToy = "Yarn";
 
   public void playWith() {
     System.out.println("Yeah " + favToy);
   }
 
+  @Override
   public void walkAround() {
     System.out.println(this.getName() + " stalks around");
   }
