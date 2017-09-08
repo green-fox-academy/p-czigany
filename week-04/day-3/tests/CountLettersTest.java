@@ -30,4 +30,18 @@ class CountLettersTest {
     compareTo.put('n', 1);
     assertFalse(compareTo.equals(myCounter.countLetters("saaarkaaany")));
   }
+
+  @Test
+  void testCaseNull() {
+    CountLetters myCounter = new CountLetters();
+    HashMap<Character, Integer> compareTo = new HashMap<>();
+    assertTrue(compareTo.equals(myCounter.countLetters(null)));
+  }
+
+  @Test
+  void testCaseEmpty() {
+    CountLetters myCounter = new CountLetters();
+    HashMap<Character, Integer> compareTo = new HashMap<>();
+    assertTrue(compareTo.equals(myCounter.countLetters("")));
+  }
 }

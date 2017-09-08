@@ -5,12 +5,14 @@ class CountLetters {
 
   HashMap<Character, Integer> countLetters(String textToExamine) {
     HashMap<Character, Integer> charsAndNumbers = new HashMap<>();
-    for (Character examined :
-            stringToLetters(textToExamine)) {
-      if (charsAndNumbers.containsKey(examined)) {
-        charsAndNumbers.replace(examined, charsAndNumbers.get(examined) + 1);
-      } else {
-        charsAndNumbers.put(examined, 1);
+    if (textToExamine != null) {
+      for (Character examined :
+          stringToLetters(textToExamine)) {
+        if (charsAndNumbers.containsKey(examined)) {
+          charsAndNumbers.replace(examined, charsAndNumbers.get(examined) + 1);
+        } else {
+          charsAndNumbers.put(examined, 1);
+        }
       }
     }
     return charsAndNumbers;
