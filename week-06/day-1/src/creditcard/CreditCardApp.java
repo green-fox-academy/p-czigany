@@ -1,11 +1,10 @@
 package creditcard;
 
-/**
- * Created by peter on 2017.04.18..
- */
 public class CreditCardApp {
 
   public static void main(String[] args) {
-
+    for (int i = 0; i < 10; i++) {
+      System.out.println(new CreditCard());
+    }
   }
 }
