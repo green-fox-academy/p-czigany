@@ -8,20 +8,21 @@ public class Reservation implements Reservationy {
   public String getDowBooking() {
     int randomDay = new Random().nextInt(7) + 1;
     String day;
-    if (randomDay == 1) {
-      day = "MON";
-    } else if (randomDay == 2) {
-      day = "TUE";
-    } else if (randomDay == 3) {
-      day = "WED";
-    } else if (randomDay == 4) {
-      day = "THU";
-    } else if (randomDay == 5) {
-      day = "FRI";
-    } else if (randomDay == 6) {
-      day = "SAT";
-    } else {
-      day = "SUN";
+    switch (randomDay) {
+      case 1: day = "MON";
+        break;
+      case 2: day = "TUE";
+        break;
+      case 3: day = "WED";
+        break;
+      case 4: day = "THU";
+        break;
+      case 5: day = "FRI";
+        break;
+      case 6: day = "SAT";
+        break;
+      default: day = "SUN";
+        break;
     }
     return day;
   }
