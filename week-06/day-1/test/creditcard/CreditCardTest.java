@@ -9,9 +9,9 @@ class CreditCardTest {
   private CreditCard myCreditCard = new CreditCard();
 
   @Test
-  void countCVV(){
-    assertEquals(69, myCreditCard.cumeSumCVV("6765350286622461"));
+  void countCVV() {
+    assertEquals(
+        69,
+        myCreditCard.cumeSumCVV("6765350286622461"));
   }
-
-
 }
