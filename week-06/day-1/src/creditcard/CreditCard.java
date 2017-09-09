@@ -9,7 +9,7 @@ public class CreditCard implements CreditCardy {
   private String codeAccount;
   private static int count = 0;
 
-  CreditCard() {
+  public CreditCard() {
     this.nameCardholder = "ABC" + count;
     this.codeAccount = randomize16Digits();
     this.sumCVV = cumeSumCVV(this.codeAccount);
@@ -51,6 +51,6 @@ public class CreditCard implements CreditCardy {
 
   @Override
   public String toString() {
-    return "Name=" + nameCardholder + " CC#=" + codeAccount + " CVV=" + sumCVV;
+    return String.format("Name=%s CC#=%s CCV=%d", nameCardholder, codeAccount, sumCVV);
   }
 }

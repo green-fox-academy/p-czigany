@@ -41,6 +41,7 @@ public class Reservation implements Reservationy {
     return codeToReturn.toString();
   }
 
+  @Override
   public String toString() {
     return String.format("Booking# %s for %s", getCodeBooking(), getDowBooking());
   }
