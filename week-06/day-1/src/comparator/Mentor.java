@@ -1,6 +1,8 @@
 package comparator;
 
-class Mentor extends Person {
+import java.util.Objects;
+
+class Mentor extends Person implements Comparable<Mentor> {
 
   private String level;
 
@@ -23,5 +25,27 @@ class Mentor extends Person {
   Mentor() {
     super("Jane Doe", 30, "female");
     this.level = "intermediate";
+  }
+
+  @Override
+  public int compareTo(Mentor otherMentor) {
+    return Integer.compare(Integer.valueOf(this.level), Integer.valueOf(otherMentor.level));
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Mentor)) {
+      return false;
+    }
+    Mentor otherMentor = (Mentor) o;
+    return Objects.equals(this.name, otherMentor.name) &&
+        Objects.equals(this.age, otherMentor.age) &&
+        Objects.equals(this.gender, otherMentor.gender) &&
+        Objects.equals(this.level, otherMentor.level);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, age, gender, level);
   }
 }
