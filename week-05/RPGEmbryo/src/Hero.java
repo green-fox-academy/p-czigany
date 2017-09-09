@@ -3,7 +3,7 @@
  */
 public class Hero extends Character {
 
-  public Hero(int posX, int posY) {
-    super(ImageHandler.getInstance().HERO_DOWN, posX, posY);
+  public Hero() {
+    super(ImageHandler.getInstance().HERO_DOWN, 0, 0);
   }
 }

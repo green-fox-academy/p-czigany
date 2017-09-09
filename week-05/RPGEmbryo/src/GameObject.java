@@ -5,6 +5,8 @@ import java.awt.image.BufferedImage;
  * Created by peter on 2017.04.10..
  */
 public class GameObject {
+  static final int TILEWIDTH = 72;
+  static final int TILEHEIGHT = 72;
 
   private BufferedImage image;
   private int posX, posY;
@@ -17,7 +19,7 @@ public class GameObject {
 
   public void draw(Graphics graphics) {
     if (image != null) {
-      graphics.drawImage(image, posX, posY, null);
+      graphics.drawImage(image, posX * TILEWIDTH, posY * TILEHEIGHT, null);
     }
   }
 

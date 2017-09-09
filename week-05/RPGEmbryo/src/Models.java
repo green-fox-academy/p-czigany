@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public class Models {
 
-  private ArrayList<Tile> gameObjects;
+  private ArrayList<GameObject> gameObjects;
   private Map map;
 
   public Models() {
@@ -20,7 +20,7 @@ public class Models {
     }
   }
 
-  public ArrayList<Tile> getGameObjects() {
+  public ArrayList<GameObject> getGameObjects() {
     return gameObjects;
   }
 

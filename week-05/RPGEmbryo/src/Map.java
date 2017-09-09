@@ -7,8 +7,6 @@ import java.util.List;
  */
 public class Map {
 
-  int TILEHEIGHT = 72;
-  int TILEWIDTH = 72;
   private ArrayList<ArrayList<Tile>> tileMap;
   int floorTiles;
 
@@ -21,10 +19,10 @@ public class Map {
       tileMap.add(new ArrayList<>());
       for (int j = 0; j < mapLines.get(i).length(); j++) {
         if (mapLines.get(j).charAt(i) == '1') {
-          tileMap.get(i).add(new Floor(i * TILEWIDTH, j * TILEHEIGHT));
+          tileMap.get(i).add(new Floor(i, j));
           floorTiles++;
         } else if (mapLines.get(j).charAt(i) == '0') {
-          tileMap.get(i).add(new Wall(i * TILEWIDTH, j * TILEHEIGHT));
+          tileMap.get(i).add(new Wall(i, j));
         }
       }
     }

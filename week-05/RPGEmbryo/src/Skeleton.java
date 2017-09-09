@@ -7,3 +7,4 @@ public class Skeleton extends Monster {
     super(ImageHandler.getInstance().SKELETON, posX, posY);
   }
 }
+

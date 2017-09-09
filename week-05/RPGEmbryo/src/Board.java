@@ -10,42 +10,47 @@ import java.awt.event.KeyListener;
  */
 public class Board extends JComponent implements KeyListener {
 
-  static final int TILEHEIGHT = 72;
-  static final int TILEWIDTH = 72;
   Models models;
   Hero hero;
+  ArrayList<Monster> monsters;
+  Map map;
 
   public Board() {
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
-    hero = new Hero(0, 0);
+
+    hero = new Hero();
+    models = new Models();
+    monsters = new ArrayList<>();
+    map = new Map();
+
+    ArrayList<GameObject> emptyTiles = new ArrayList<>();
+    for (ArrayList<Tile> currentTileLine :
+            map.getTileMap()) {
+      for (Tile isFloor :
+              currentTileLine) {
+        if (isFloor instanceof Floor) {
+          emptyTiles.add(isFloor);
+        }
+      }
+    }
+    for (int i = 0; i < 3; i++) {
+      int random = (int) (Math.random() * emptyTiles.size());
+      models.getGameObjects().add(new Skeleton(emptyTiles.get(random).getPosX(),
+              emptyTiles.get(random).getPosY()));
+      emptyTiles.remove(random);
+    }
+    models.getGameObjects().add(hero);
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    models = new Models();
 
     for (GameObject toDraw :
             models.getGameObjects()) {
       toDraw.draw(graphics);
     }
-
-    ArrayList<Tile> emptyTiles = new ArrayList<>();
-    for (int i = 0; i < 3; i++) {
-      for (Tile isFloor :
-              models.getGameObjects()) {
-        if (isFloor instanceof Floor) {
-          emptyTiles.add(isFloor);
-        }
-      }
-      int random = (int) (Math.random() * emptyTiles.size());
-      new Skeleton(emptyTiles.get(random).getPosX(), emptyTiles.get(random).getPosY())
-              .draw(graphics);
-      emptyTiles.remove(random);
-    }
-
-    hero.draw(graphics);
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
@@ -62,28 +67,29 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      if ((hero.getPosY() - TILEHEIGHT >= 0 * TILEHEIGHT) && !((models.getMap().getTileMap()
-              .get(hero.getPosX() / 72).get((hero.getPosY() - TILEHEIGHT) / 72)) instanceof Wall)) {
-        hero.setPosY(hero.getPosY() - TILEHEIGHT);
+      if ((hero.getPosY() - 1 >= 0) && !(map.getTileMap()
+              .get(hero.getPosX())
+              .get((hero.getPosY() - 1)) instanceof Wall)) {
+        hero.setPosY(hero.getPosY() - 1);
       }
       hero.setImage(ImageHandler.getInstance().HERO_UP);
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      if ((hero.getPosY() + TILEHEIGHT <= 9 * TILEHEIGHT) && !((models.getMap().getTileMap()
-              .get(hero.getPosX() / 72).get((hero.getPosY() + TILEHEIGHT) / 72)) instanceof Wall)) {
-        hero.setPosY(hero.getPosY() + TILEHEIGHT);
+      if ((hero.getPosY() + 1 <= 9) && !((models.getMap().getTileMap()
+              .get(hero.getPosX()).get(hero.getPosY() + 1)) instanceof Wall)) {
+        hero.setPosY(hero.getPosY() + 1);
       }
       hero.setImage(ImageHandler.getInstance().HERO_DOWN);
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-      if ((hero.getPosX() - TILEWIDTH >= 0 * TILEWIDTH) && !((models.getMap().getTileMap()
-              .get((hero.getPosX() - TILEWIDTH) / 72)
-              .get((hero.getPosY()) / 72)) instanceof Wall)) {
-        hero.setPosX(hero.getPosX() - TILEWIDTH);
+      if (hero.getPosX() - 1 >= 0 && !(models.getMap().getTileMap()
+              .get(hero.getPosX() - 1)
+              .get(hero.getPosY()) instanceof Wall)) {
+        hero.setPosX(hero.getPosX() - 1);
       }
       hero.setImage(ImageHandler.getInstance().HERO_LEFT);
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      if ((hero.getPosX() + TILEWIDTH <= 9 * TILEWIDTH) && !((models.getMap().getTileMap()
-              .get((hero.getPosX() + TILEWIDTH) / 72).get(hero.getPosY() / 72)) instanceof Wall)) {
-        hero.setPosX(hero.getPosX() + TILEWIDTH);
+      if (hero.getPosX() + 1 <= 9 && !((models.getMap().getTileMap()
+              .get(hero.getPosX() + 1).get(hero.getPosY()) instanceof Wall))) {
+        hero.setPosX(hero.getPosX() + 1);
       }
       hero.setImage(ImageHandler.getInstance().HERO_RIGHT);
     }
