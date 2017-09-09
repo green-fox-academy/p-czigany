@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -47,31 +48,69 @@ class CowsAndBulls {
   }
 
   String guess() {
-    StringBuilder answer = new StringBuilder();
+    System.out.println("Guess! (Type 4 digits.)");
+    String guess = getInput();
+    if (!validateGuess(guess)) {
+      return "Invalid guess!";
+    }
+
+    HashMap<String, Integer> feedback = produceFeedback(guess);
+
+    checkGameEnd(feedback.get("cows"));
+
+    String answer = composeAnswer(feedback.get("cows"), feedback.get("bulls"));
+    return answer;
+  }
+
+  HashMap<String, Integer> produceFeedback(String guess) {
+    char examinedLetter;
     int cows = 0;
     int bulls = 0;
-    Scanner scan = new Scanner(System.in);
-    System.out.println("Guess! (Type 4 digits.)");
-    String guess = scan.nextLine();
     for (int i = 0; i < 4; i++) {
-      char examinedLetter = guess.charAt(i);
+      examinedLetter = guess.charAt(i);
       if (examinedLetter == number.charAt(i)) {
         cows++;
       } else if (number.contains(String.valueOf(examinedLetter))) {
         bulls++;
       }
     }
-    answer
-        .append("Cows: ")
-        .append(cows)
-        .append("\n")
-        .append("Bulls: ")
-        .append(bulls)
-        .append("\n");
+    HashMap<String, Integer> feedback = new HashMap<>();
+    feedback.put("cows", cows);
+    feedback.put("bulls", bulls);
+    return feedback;
+  }
+
+  void checkGameEnd(int cows) {
     if (cows == 4) {
       gameState = GameState.FINISHED;
     }
-    return answer.toString();
+  }
+
+  String getInput() {
+    Scanner scan = new Scanner(System.in);
+    return scan.nextLine();
+  }
+
+  String composeAnswer(int cows, int bulls) {
+    return "Cows: " + cows + "\n"
+        + "Bulls: " + bulls + "\n";
+  }
+
+  boolean validateGuess(String guess) {
+    if (guess == null) {
+      return false;
+    }
+    if (guess.length() != 4) {
+      return false;
+    }
+    int digitAsNumber;
+    for (char digit : guess.toCharArray()) {
+      digitAsNumber = Character.getNumericValue(digit);
+      if (digitAsNumber < 0 || digitAsNumber > 9) {
+        return false;
+      }
+    }
+    return true;
   }
 
   public static void main(String[] args) {
