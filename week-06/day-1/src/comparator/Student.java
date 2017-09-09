@@ -1,6 +1,8 @@
 package comparator;
 
-class Student extends Person {
+import java.util.Objects;
+
+class Student extends Person implements Comparable<Student> {
 
   private String previousOrganization;
   private int skippedDays;
@@ -31,5 +33,26 @@ class Student extends Person {
     super("Jane Doe", 30, "female");
     this.previousOrganization = "The School of Life";
     this.skippedDays = 0;
+  }
+
+  @Override
+  public int compareTo(Student otherStudent) {
+    return Integer.compare(this.skippedDays, otherStudent.skippedDays);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Student)) {
+      return false;
+    }
+    Student otherStudent = (Student) o;
+    return Objects.equals(this.name, otherStudent.name) &&
+        Objects.equals(this.age, otherStudent.age) &&
+        Objects.equals(this.gender, otherStudent.gender);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, age, gender);
   }
 }
