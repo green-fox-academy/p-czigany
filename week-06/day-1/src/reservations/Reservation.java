@@ -1,13 +1,12 @@
 package reservations;
 
-/**
- * Created by peter on 2017.04.18..
- */
+import java.util.Random;
+
 public class Reservation implements Reservationy {
 
   @Override
   public String getDowBooking() {
-    int randomDay = (int) (Math.random() * 7) + 1;
+    int randomDay = new Random().nextInt(7) + 1;
     String day;
     if (randomDay == 1) {
       day = "MON";
@@ -29,16 +28,16 @@ public class Reservation implements Reservationy {
 
   @Override
   public String getCodeBooking() {
-    String codeToReturn = "";
+    StringBuilder codeToReturn = new StringBuilder();
     for (int i = 0; i < 8; i++) {
-      int random = (int) (Math.random() * 36) - 10;
+      int random = new Random().nextInt(36) - 10;
       if (random < 0) {
-        codeToReturn += String.valueOf(random + 10);
+        codeToReturn.append(random + 10);
       } else {
-        codeToReturn += String.valueOf((char) ('A' + random));
+        codeToReturn.append(String.valueOf((char) ('A' + random)));
       }
     }
-    return codeToReturn;
+    return codeToReturn.toString();
   }
 
   public String toString() {
