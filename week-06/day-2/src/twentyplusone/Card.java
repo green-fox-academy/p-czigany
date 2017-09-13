@@ -1,33 +1,49 @@
 package twentyplusone;
 
-/**
- * Created by peter on 2017.04.19..
- */
-public class Card {
+import java.util.Objects;
 
-  private CardColor color;
+class Card {
+
   private CardSuit suit;
   private CardRank rank;
 
-  public Card(CardRank rank, CardSuit suit) {
+  Card(CardRank rank, CardSuit suit) {
     this.suit = suit;
-    if (suit.equals(CardSuit.CLUBS) && suit.equals(CardSuit.SPADES)) {
-      color = CardColor.BLACK;
-    } else {
-      color = CardColor.RED;
-    }
     this.rank = rank;
   }
 
-  public CardSuit getSuit() {
+  CardColor getColor() {
+    if (suit.equals(CardSuit.CLUBS) && suit.equals(CardSuit.SPADES)) {
+      return CardColor.BLACK;
+    }
+    return CardColor.RED;
+  }
+
+  CardSuit getSuit() {
     return suit;
   }
 
-  public CardRank getRank() {
+  CardRank getRank() {
     return rank;
   }
 
-  public String printCard() {
+  String printCard() {
     return rank.name() + " " + suit.name();
   }
-}
+
+  @Override
+  public boolean equals(Object o) {
+      if (!(o instanceof Card)) {
+        return false;
+      }
+      Card otherCard = (Card) o;
+      return Objects.equals(this.suit, otherCard.suit) &&
+          Objects.equals(this.rank, otherCard.rank);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(suit, rank);
+    }
+  }
+

@@ -2,28 +2,26 @@ package twentyplusone;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-/**
- * Created by peter on 2017.04.19..
- */
 public class Deck {
 
   private List<Card> cards;
 
-  public Deck(int numberOfCards) {
+  Deck(int numberOfCards) {
     this.cards = new ArrayList<>();
     fill(numberOfCards);
   }
 
   public void shuffleDeck() {
     List<Card> shuffledDeck = new ArrayList<>();
-    while (cards.size() > 0) {
-      shuffledDeck.add(cards.remove((int) (Math.random() * cards.size())));
+    while (!cards.isEmpty()) {
+      shuffledDeck.add(cards.remove(new Random().nextInt(cards.size())));
     }
     cards = shuffledDeck;
   }
 
-  public Card pullFirst() {
+  Card pullFirst() {
     return cards.remove(0);
   }
 
@@ -32,75 +30,51 @@ public class Deck {
   }
 
   public Card pullRandom() {
-    int randomIndex = (int) (Math.random() * cards.size());
+    int randomIndex = new Random().nextInt(cards.size());
     return cards.remove(randomIndex);
   }
 
-  public void fill(int numberOfCards) {
+  private void fill(int numberOfCards) {
     for (int i = 0; i < numberOfCards; i++) {
       while (cards.size() < i + 1) {
         Card toAdd = randomCard();
-        boolean addable = true;
-        if (i > 0) {
-          for (Card examinedCard :
-                  cards) {
-            if (toAdd.printCard().equals(examinedCard.printCard())) {
-              addable = false;
-            }
-          }
-        }
-        if (addable) {
+        if (!cards.contains(toAdd)) {
           cards.add(toAdd);
         }
       }
     }
   }
 
-  public CardRank randomRank() {
-    int d13 = (int) (Math.random() * 13) + 1;
-    if (d13 == 1) {
-      return CardRank.ACE;
-    } else if (d13 == 2) {
-      return CardRank.TWO;
-    } else if (d13 == 3) {
-      return CardRank.THREE;
-    } else if (d13 == 4) {
-      return CardRank.FOUR;
-    } else if (d13 == 5) {
-      return CardRank.FIVE;
-    } else if (d13 == 6) {
-      return CardRank.SIX;
-    } else if (d13 == 7) {
-      return CardRank.SEVEN;
-    } else if (d13 == 8) {
-      return CardRank.EIGHT;
-    } else if (d13 == 9) {
-      return CardRank.NINE;
-    } else if (d13 == 10) {
-      return CardRank.TEN;
-    } else if (d13 == 11) {
-      return CardRank.JACK;
-    } else if (d13 == 12) {
-      return CardRank.QUEEN;
-    } else {
-      return CardRank.KING;
+  private CardRank randomRank() {
+    int d13 = new Random().nextInt(13) + 1;
+    switch (d13) {
+      case 1: return CardRank.ACE;
+      case 2: return CardRank.TWO;
+      case 3: return CardRank.THREE;
+      case 4: return CardRank.FOUR;
+      case 5: return CardRank.FIVE;
+      case 6: return CardRank.SIX;
+      case 7: return CardRank.SEVEN;
+      case 8: return CardRank.EIGHT;
+      case 9: return CardRank.NINE;
+      case 10: return CardRank.TEN;
+      case 11: return CardRank.JACK;
+      case 12: return CardRank.QUEEN;
+      default: return CardRank.KING;
     }
   }
 
-  public CardSuit randomSuit() {
-    int d4 = (int) (Math.random() * 4) + 1;
-    if (d4 == 1) {
-      return CardSuit.SPADES;
-    } else if (d4 == 2) {
-      return CardSuit.HEARTS;
-    } else if (d4 == 3) {
-      return CardSuit.DIAMONDS;
-    } else {
-      return CardSuit.CLUBS;
+  private CardSuit randomSuit() {
+    int d4 = new Random().nextInt(4) + 1;
+    switch (d4) {
+      case 1: return CardSuit.SPADES;
+      case 2: return CardSuit.HEARTS;
+      case 3: return CardSuit.DIAMONDS;
+      default: return CardSuit.CLUBS;
     }
   }
 
-  public Card randomCard() {
+  private Card randomCard() {
     return new Card(randomRank(), randomSuit());
   }
 }
