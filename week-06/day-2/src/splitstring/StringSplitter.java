@@ -1,8 +1,5 @@
 package splitstring;
 
-/**
- * Created by peter on 2017.04.19..
- */
 public class StringSplitter {
 
   public String[] splitString(String input, int cutIndex) {
