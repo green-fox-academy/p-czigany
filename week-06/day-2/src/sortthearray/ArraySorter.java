@@ -2,9 +2,6 @@ package sortthearray;
 
 import java.util.Arrays;
 
-/**
- * Created by peter on 2017.04.19..
- */
 public class ArraySorter {
 
   public <T extends Number> void sortArray(T[] inputArray) {
