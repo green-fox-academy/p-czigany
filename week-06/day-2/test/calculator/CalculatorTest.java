@@ -1,23 +1,21 @@
 package calculator;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-/**
- * Created by peter on 2017.04.19..
- */
 public class CalculatorTest {
-  Calculator myAbacus = new Calculator();
+
+  private Calculator myAbacus = new Calculator();
 
   @Test
   public void addTest() {
-    assertTrue(myAbacus.add(3,4) == 7);
+    assertTrue(myAbacus.add(3, 4) == 7);
   }
 
   @Test
   public void subtractTest() {
-   assertTrue(myAbacus.subtract(4, 3) == 1);
+    assertTrue(myAbacus.subtract(4, 3) == 1);
   }
 
   @Test
